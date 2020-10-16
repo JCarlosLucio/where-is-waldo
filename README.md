@@ -1,3 +1,9 @@
+# Project: WHERE'S WALDO (A PHOTO TAGGING APP)
+from The Odin Project's [curriculum](https://www.theodinproject.com/courses/javascript/lessons/where-s-waldo-a-photo-tagging-app-javascript)
+
+## Overview
+A Where is Waldo (Photo Tagging) type App made with React and Firebase.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
