@@ -1,5 +1,6 @@
 import React from 'react';
 import FindList from './FindList';
+import seedFindItems from '../seedFindItems';
 
 function Sidebar() {
   return (
