@@ -6,7 +6,7 @@ function Sidebar() {
   return (
     <div>
       <h1>Where is Waldo?</h1>
-      <FindList />
+      {seedFindItems.map((list) => <FindList {...list} key={list.id} />)}
     </div>
   );
 }
