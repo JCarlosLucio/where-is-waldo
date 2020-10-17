@@ -1,12 +1,11 @@
 import React from 'react';
 import FindItem from './FindItem';
 
-function FindList() {
+function FindList({ difficulty, items }) {
   return (
     <div>
-      <h1>Difficulty</h1>
-      {/* FindItems go here */}
-      <FindItem />
+      <h1>{difficulty}</h1>
+      {items.map((item) => <FindItem {...item} key={item.id} />)}
     </div>
   );
 }
