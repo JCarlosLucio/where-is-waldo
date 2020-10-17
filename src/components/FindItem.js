@@ -1,11 +1,12 @@
 import React from 'react';
 
-function FindItem() {
+function FindItem({ name, franchise }) {
   return (
     <div>
       {/* character image goes here */}
-      <h2>Character Name</h2>
-      <h5>Character Franchise</h5>
+      {/* conditional style w/found prop */}
+      <h2>{name}</h2>
+      <h5>{franchise}</h5>
     </div>
   );
 }
