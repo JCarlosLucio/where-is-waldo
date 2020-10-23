@@ -1,11 +1,23 @@
 import React from 'react';
 import FindList from './FindList';
 
-function Sidebar({ findLists }) {
+function Sidebar({ list }) {
   return (
     <div>
       <h1>Where is Waldo?</h1>
-      {findLists.map((list) => <FindList {...list} key={list.id} />)}
+
+      <FindList
+        difficulty="easy"
+        items={list.filter((item) => item.difficulty === 'easy')}
+      />
+      <FindList
+        difficulty="medium"
+        items={list.filter((item) => item.difficulty === 'medium')}
+      />
+      <FindList
+        difficulty="hard"
+        items={list.filter((item) => item.difficulty === 'hard')}
+      />
     </div>
   );
 }
