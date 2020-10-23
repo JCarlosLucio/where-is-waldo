@@ -1,32 +1,24 @@
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import GameImage from './components/GameImage';
-import seedFindItems from './seedFindItems';
+import seedItemList from './seedItemList';
 
 function App() {
-  const [lists, setLists] = useState(seedFindItems);
+  const [list, setList] = useState(seedItemList);
 
-  const toggleFound = (listId, itemId) => {
-    const updatedLists = lists.map((list) => {
-      if (list.id === listId) {
-        return {
-          ...list,
-          items: list.items.map((item) => {
-            if (item.id === itemId) {
-              return { ...item, found: true };
-            }
-            return item;
-          }),
-        };
+  const toggleFound = (id) => {
+    const updatedItems = list.map((item) => {
+      if (item.id === id) {
+        return { ...item, found: true };
       }
-      return list;
+      return item;
     });
-    setLists(updatedLists);
+    setList(updatedItems);
   };
 
   return (
     <div>
-      <Sidebar findLists={lists} />
+      <Sidebar list={list} />
       {/* where is waldo type image goes here */}
       <GameImage />
     </div>
