@@ -6,6 +6,17 @@ function GameImage() {
   return (
     <div>
       <h1>GAME IMAGE</h1>
+      <img src={IMAGE_URL} useMap="#the-loc-nar" alt="the loc nar" />
+      <map name="the-loc-nar">
+        <area
+          target="_self"
+          alt="Bowser"
+          title="Bowser"
+          href="#"
+          coords="1578,3360,1779,3537"
+          shape="rect"
+        />
+      </map>
       {/* The Loc Nar by Egor Klyuchnyk*/}
       {/* Instagram https://www.instagram.com/ad.2.222/*/}
       {/* Patreon https://www.patreon.com/Egor*/}
