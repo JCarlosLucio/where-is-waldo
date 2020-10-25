@@ -1,8 +1,16 @@
 const seedItemList = [
+  // Easy
   {
-    id: 'character-item',
-    name: 'Character 1',
-    franchise: 'Character Franchise',
+    id: 'bowser',
+    name: 'Bowser',
+    franchise: 'Super Mario Bros',
+    difficulty: 'easy',
+    found: false,
+  },
+  {
+    id: 'cacodemon',
+    name: 'Cacodemon',
+    franchise: 'DOOM',
     difficulty: 'easy',
     found: false,
   },
