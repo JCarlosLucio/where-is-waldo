@@ -14,6 +14,21 @@ const seedItemList = [
     difficulty: 'easy',
     found: false,
   },
+  // Medium
+  {
+    id: 'waldo',
+    name: 'Waldo',
+    franchise: "Wheres's Waldo?",
+    difficulty: 'medium',
+    found: false,
+  },
+  {
+    id: 'yubaba',
+    name: 'Yubaba',
+    franchise: 'Spirited Away (Sen to Chihiro no Kamikakushi)',
+    difficulty: 'medium',
+    found: false,
+  },
 ];
 
 export default seedItemList;
