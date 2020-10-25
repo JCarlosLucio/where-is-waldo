@@ -29,6 +29,21 @@ const seedItemList = [
     difficulty: 'medium',
     found: false,
   },
+  // Hard
+  {
+    id: 'ash-ketchum',
+    name: 'Ash Ketchum',
+    franchise: 'Pokemon',
+    difficulty: 'hard',
+    found: false,
+  },
+  {
+    id: 'the-knight',
+    name: 'The Knight',
+    franchise: 'Hollow Knight',
+    difficulty: 'hard',
+    found: false,
+  },
 ];
 
 export default seedItemList;
