@@ -25,7 +25,7 @@ const seedItemList = [
   {
     id: 'yubaba',
     name: 'Yubaba',
-    franchise: 'Spirited Away (Sen to Chihiro no Kamikakushi)',
+    franchise: 'Spirited Away',
     difficulty: 'medium',
     found: false,
   },
