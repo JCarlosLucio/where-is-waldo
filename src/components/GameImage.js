@@ -6,7 +6,6 @@ function GameImage() {
 
   return (
     <div>
-      <h1>GAME IMAGE</h1>
       {/* 
           The Loc Nar by Egor Klyuchnyk
           Instagram https://www.instagram.com/ad.2.222/
