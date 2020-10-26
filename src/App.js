@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import GameImage from './components/GameImage';
 import seedItemList from './seedItemList';
+import styles from './App.module.scss';
 
 function App() {
   const [list, setList] = useState(seedItemList);
@@ -17,7 +18,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className={styles.root}>
       <Sidebar list={list} />
       {/* where is waldo type image goes here */}
       <GameImage />
