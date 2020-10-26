@@ -4,7 +4,7 @@ import FindItem from './FindItem';
 function FindList({ difficulty, items }) {
   return (
     <div>
-      <h1>{difficulty}</h1>
+      <h2>{difficulty}</h2>
       {items.map((item) => <FindItem {...item} key={item.id} />)}
     </div>
   );
