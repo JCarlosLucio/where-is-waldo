@@ -5,7 +5,7 @@ import styles from './Sidebar.module.scss';
 function Sidebar({ list }) {
   return (
     <div className={styles.root}>
-      <h1>Where is Waldo?</h1>
+      <h1 className={styles.title}>Where is Waldo?</h1>
 
       <FindList
         difficulty="easy"
