@@ -5,7 +5,7 @@ function GameImage() {
   const IMAGE_URL = 'https://i.imgur.com/N4wefbX.jpg';
 
   return (
-    <div>
+    <div className={styles.root}>
       {/* 
           The Loc Nar by Egor Klyuchnyk
           Instagram https://www.instagram.com/ad.2.222/
