@@ -1,9 +1,10 @@
 import React from 'react';
 import FindList from './FindList';
+import styles from './Sidebar.module.scss';
 
 function Sidebar({ list }) {
   return (
-    <div>
+    <div className={styles.root}>
       <h1>Where is Waldo?</h1>
 
       <FindList
