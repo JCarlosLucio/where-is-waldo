@@ -5,7 +5,7 @@ function FindItem({ name, franchise }) {
     <div>
       {/* character image goes here */}
       {/* conditional style w/found prop */}
-      <h2>{name}</h2>
+      <h3>{name}</h3>
       <h5>{franchise}</h5>
     </div>
   );
