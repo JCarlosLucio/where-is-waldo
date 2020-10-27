@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ContextMenu from './ContextMenu';
 import styles from './GameImage.module.scss';
 
 function GameImage() {
   const IMAGE_URL = 'https://i.imgur.com/N4wefbX.jpg';
+
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
 
   return (
     <div className={styles.root}>
@@ -13,7 +16,7 @@ function GameImage() {
           Patreon https://www.patreon.com/Egor
           Buy his poster https://anomaly-world.com/posters-by-anomaly-world/cyberpunk-poster-ad2222
           */}
-      <ContextMenu />
+      <ContextMenu xPos={x} yPos={y} />
       <img
         className={styles.image}
         src={IMAGE_URL}
