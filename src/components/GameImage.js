@@ -8,8 +8,18 @@ function GameImage() {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    const xPos = e.pageX;
+    const yPos = e.pageY;
+    console.log({ xPos }, { yPos });
+    setX(xPos);
+    setY(yPos);
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <div className={styles.root}>
+    <div className={styles.root} onClick={handleClick}>
       {/* 
           The Loc Nar by Egor Klyuchnyk
           Instagram https://www.instagram.com/ad.2.222/
