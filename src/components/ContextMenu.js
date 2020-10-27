@@ -5,7 +5,7 @@ function ContextMenu({ xPos, yPos }) {
   return (
     <div
       className={styles.root}
-      style={{ top: `${yPos}px`, left: `${xPos}px` }}
+      style={{ top: `${yPos}px`, left: `calc(${xPos}px - 20rem)` }}
     >
       <h1>Menu</h1>
     </div>
