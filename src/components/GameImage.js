@@ -26,7 +26,7 @@ function GameImage() {
           Patreon https://www.patreon.com/Egor
           Buy his poster https://anomaly-world.com/posters-by-anomaly-world/cyberpunk-poster-ad2222
           */}
-      <ContextMenu xPos={x} yPos={y} />
+      {menuOpen && <ContextMenu xPos={x} yPos={y} />}
       <img
         className={styles.image}
         src={IMAGE_URL}
