@@ -4,7 +4,7 @@ import styles from './GameImage.module.scss';
 
 function GameImage() {
   const IMAGE_URL = 'https://i.imgur.com/N4wefbX.jpg';
-
+  const [menuOpen, setMenuOpen] = useState(false);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
