@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './ContextMenu.module.scss';
 
 function ContextMenu() {
   return (
-    <div>
+    <div className={styles.root}>
       <h1>Menu</h1>
     </div>
   );
