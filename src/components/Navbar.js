@@ -1,6 +1,6 @@
 import React from 'react';
 import FindList from './FindList';
-import styles from './Sidebar.module.scss';
+import styles from './Navbar.module.scss';
 
 function Sidebar({ list }) {
   return (
