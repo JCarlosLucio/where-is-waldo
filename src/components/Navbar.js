@@ -10,8 +10,8 @@ function Navbar({ list }) {
       <ul className={styles.nav}>
         <li className={styles.title}>Where is Waldo?</li>
         <li>Timer</li>
-        <li>
-          <button>{numToFind}</button>
+        <li className={styles.dropdown}>
+          <button className={styles['dropdown-btn']}>{numToFind}</button>
         </li>
       </ul>
 

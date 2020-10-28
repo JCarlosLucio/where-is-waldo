@@ -24,3 +24,30 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
+
+.dropdown {
+  width: calc(3.75rem * 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-btn {
+    width: calc(3.75rem * 0.7);
+    height: calc(3.75rem * 0.7);
+    background-color: #8d0c0c;
+    cursor: pointer;
+    color: inherit;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 300ms ease;
+
+    &:hover {
+      background-color: rgb(241, 8, 8);
+    }
+  }
+}
