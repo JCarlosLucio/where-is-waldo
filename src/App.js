@@ -21,7 +21,7 @@ function App() {
     <div className={styles.root}>
       <Sidebar list={list} />
       {/* where is waldo type image goes here */}
-      <GameImage />
+      <GameImage toggleFound={toggleFound} />
     </div>
   );
 }
