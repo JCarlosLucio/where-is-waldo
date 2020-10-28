@@ -1,0 +1,12 @@
+.root {
+  position: absolute;
+  top: 58px;
+  width: 16rem;
+  transform: translateX(-45%);
+  background-color: rgb(23, 19, 77);
+  color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow: hidden;
+  transition: height var(--speed) ease;
+}

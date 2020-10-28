@@ -1,9 +1,10 @@
 import React from 'react';
 import FindList from './FindList';
+import styles from './DropdownMenu.module.scss';
 
 function DropdownMenu({ list }) {
   return (
-    <div>
+    <div className={styles.root}>
       <FindList
         difficulty="easy"
         items={list.filter((item) => item.difficulty === 'easy')}
