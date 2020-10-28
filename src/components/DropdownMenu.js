@@ -1,11 +1,10 @@
 import React from 'react';
+import FindList from './FindList';
 
-function DropdownMenu() {
+function DropdownMenu({ list }) {
   return (
     <div>
-      Dropdown Menu
-      {/* Move to Dropdown menu */}
-      {/* <FindList
+      <FindList
         difficulty="easy"
         items={list.filter((item) => item.difficulty === 'easy')}
       />
@@ -16,7 +15,7 @@ function DropdownMenu() {
       <FindList
         difficulty="hard"
         items={list.filter((item) => item.difficulty === 'hard')}
-      /> */}
+      />
     </div>
   );
 }
