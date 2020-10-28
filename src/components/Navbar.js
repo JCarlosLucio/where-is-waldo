@@ -4,10 +4,15 @@ import styles from './Navbar.module.scss';
 
 function Navbar({ list }) {
   return (
-    <div className={styles.root}>
-      <h1 className={styles.title}>Where is Waldo?</h1>
+    <nav className={styles.root}>
+      <ul>
+        <li className={styles.title}>Where is Waldo?</li>
+        <li>Timer</li>
+        <li>🚀</li>
+      </ul>
 
-      <FindList
+      {/* Move to Dropdown menu */}
+      {/* <FindList
         difficulty="easy"
         items={list.filter((item) => item.difficulty === 'easy')}
       />
@@ -18,8 +23,8 @@ function Navbar({ list }) {
       <FindList
         difficulty="hard"
         items={list.filter((item) => item.difficulty === 'hard')}
-      />
-    </div>
+      /> */}
+    </nav>
   );
 }
 
