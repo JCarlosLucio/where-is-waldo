@@ -5,7 +5,7 @@ import styles from './Navbar.module.scss';
 function Navbar({ list }) {
   return (
     <nav className={styles.root}>
-      <ul>
+      <ul className={styles.nav}>
         <li className={styles.title}>Where is Waldo?</li>
         <li>Timer</li>
         <li>🚀</li>
