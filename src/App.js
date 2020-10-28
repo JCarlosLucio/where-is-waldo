@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
 import GameImage from './components/GameImage';
 import seedItemList from './seedItemList';
 import styles from './App.module.scss';
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className={styles.root}>
-      <Sidebar list={list} />
+      <Navbar list={list} />
       {/* where is waldo type image goes here */}
       <GameImage toggleFound={toggleFound} />
     </div>
