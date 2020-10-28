@@ -3,12 +3,16 @@ import FindList from './FindList';
 import styles from './Navbar.module.scss';
 
 function Navbar({ list }) {
+  const numToFind = list.filter((item) => !item.found).length;
+
   return (
     <nav className={styles.root}>
       <ul className={styles.nav}>
         <li className={styles.title}>Where is Waldo?</li>
         <li>Timer</li>
-        <li>🚀</li>
+        <li>
+          <button>{numToFind}</button>
+        </li>
       </ul>
 
       {/* Move to Dropdown menu */}
