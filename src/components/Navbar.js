@@ -2,7 +2,7 @@ import React from 'react';
 import FindList from './FindList';
 import styles from './Navbar.module.scss';
 
-function Sidebar({ list }) {
+function Navbar({ list }) {
   return (
     <div className={styles.root}>
       <h1 className={styles.title}>Where is Waldo?</h1>
@@ -23,4 +23,4 @@ function Sidebar({ list }) {
   );
 }
 
-export default Sidebar;
+export default Navbar;
