@@ -9,7 +9,7 @@ function Navbar({ list }) {
     <nav className={styles.root}>
       <ul className={styles.nav}>
         <li className={styles.title}>Where is Waldo?</li>
-        <li>Timer</li>
+        <li className={styles.timer}>00:00:00</li>
         <li className={styles.dropdown}>
           <button className={styles['dropdown-btn']}>{numToFind}</button>
         </li>

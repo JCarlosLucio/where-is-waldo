@@ -25,6 +25,11 @@
   font-weight: bold;
 }
 
+.timer {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .dropdown {
   width: calc(3.75rem * 0.9);
   display: flex;
@@ -39,6 +44,7 @@
     color: inherit;
     border-radius: 50%;
     border: none;
+    font-family: inherit;
     font-size: 1.6rem;
     font-weight: bold;
     display: flex;
