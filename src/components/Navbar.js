@@ -1,5 +1,5 @@
 import React from 'react';
-import FindList from './FindList';
+import DropdownMenu from './DropdownMenu';
 import styles from './Navbar.module.scss';
 
 function Navbar({ list }) {
@@ -12,22 +12,9 @@ function Navbar({ list }) {
         <li className={styles.timer}>00:00:00</li>
         <li className={styles.dropdown}>
           <button className={styles['dropdown-btn']}>{numToFind}</button>
+          <DropdownMenu />
         </li>
       </ul>
-
-      {/* Move to Dropdown menu */}
-      {/* <FindList
-        difficulty="easy"
-        items={list.filter((item) => item.difficulty === 'easy')}
-      />
-      <FindList
-        difficulty="medium"
-        items={list.filter((item) => item.difficulty === 'medium')}
-      />
-      <FindList
-        difficulty="hard"
-        items={list.filter((item) => item.difficulty === 'hard')}
-      /> */}
     </nav>
   );
 }
