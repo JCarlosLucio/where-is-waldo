@@ -17,7 +17,7 @@ function Navbar({ list }) {
           <button className={styles['dropdown-btn']} onClick={handleClick}>
             {numToFind}
           </button>
-          {open && <DropdownMenu />}
+          {open && <DropdownMenu list={list} />}
         </li>
       </ul>
     </nav>
