@@ -1,9 +1,12 @@
 .root {
   position: fixed;
-  height: 100vh;
-  width: 20rem;
+  height: 8rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
   background-color: rgb(14, 12, 49);
   color: rgb(255, 255, 255);
+  z-index: 10;
 }
 
 .title {
