@@ -13,7 +13,7 @@ function App() {
   // timer for how long it takes to find items
   const [timer, start, stop] = useTimer(0);
   // state for opening Modal
-  const [modalOpen, setModalOpen] = useToggle(true);
+  const [modalOpen, toggleModalOpen] = useToggle(true);
 
   const toggleFound = (id) => {
     const updatedItems = list.map((item) => {
