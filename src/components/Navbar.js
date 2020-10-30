@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useToggle from '../hooks/useToggle';
 import DropdownMenu from './DropdownMenu';
 import styles from './Navbar.module.scss';
 
 function Navbar({ list }) {
-  const [open, setOpen] = useState(false);
-  const handleClick = () => setOpen(!open);
+  const [open, toggleOpen] = useToggle(false);
 
   const numToFind = list.filter((item) => !item.found).length;
 
@@ -14,7 +14,7 @@ function Navbar({ list }) {
         <li className={styles.title}>Where is Waldo?</li>
         <li className={styles.timer}>00:00:00</li>
         <li className={styles.dropdown}>
-          <button className={styles['dropdown-btn']} onClick={handleClick}>
+          <button className={styles['dropdown-btn']} onClick={toggleOpen}>
             {numToFind}
           </button>
           {open && <DropdownMenu list={list} />}
