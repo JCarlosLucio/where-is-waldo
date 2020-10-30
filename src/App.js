@@ -15,6 +15,11 @@ function App() {
     countRef.current = setInterval(() => setTimer((timer) => timer + 1, 1000));
   };
 
+  const timerStop = () => {
+    clearInterval(countRef.current);
+    setTimer(0);
+  };
+
   const toggleFound = (id) => {
     const updatedItems = list.map((item) => {
       if (item.id === id) {
