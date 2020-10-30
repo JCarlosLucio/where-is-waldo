@@ -12,7 +12,9 @@ function App() {
   const countRef = useRef(null);
 
   const timerStart = () => {
-    countRef.current = setInterval(() => setTimer((timer) => timer + 1, 1000));
+    countRef.current = setInterval(() => {
+      setTimer((timer) => timer + 1);
+    }, 1000);
   };
 
   const timerStop = () => {
