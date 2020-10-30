@@ -4,6 +4,7 @@ import useToggle from './hooks/useToggle';
 import Navbar from './components/Navbar';
 import GameImage from './components/GameImage';
 import Modal from './components/Modal';
+import StartDialog from './components/StartDialog';
 import seedItemList from './seedItemList';
 import styles from './App.module.scss';
 
@@ -30,7 +31,11 @@ function App() {
       <Navbar list={list} timer={timer} />
       <GameImage toggleFound={toggleFound} />
       {/* modal for starting game/timer */}
-      {modalOpen && <Modal />}
+      {modalOpen && (
+        <Modal>
+          <StartDialog />
+        </Modal>
+      )}
     </div>
   );
 }
