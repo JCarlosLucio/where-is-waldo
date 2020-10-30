@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useTimer from './hooks/useTimer';
 import Navbar from './components/Navbar';
 import GameImage from './components/GameImage';
+import Modal from './components/Modal';
 import seedItemList from './seedItemList';
 import styles from './App.module.scss';
 
@@ -26,6 +27,7 @@ function App() {
       <Navbar list={list} timer={timer} />
       <GameImage toggleFound={toggleFound} />
       {/* modal for starting game/timer */}
+      <Modal />
     </div>
   );
 }
