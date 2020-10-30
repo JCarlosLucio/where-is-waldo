@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
+import useTimer from './hooks/useTimer';
 import Navbar from './components/Navbar';
 import GameImage from './components/GameImage';
 import seedItemList from './seedItemList';
@@ -8,19 +9,7 @@ function App() {
   // list of items to find
   const [list, setList] = useState(seedItemList);
   // timer for how long it takes to find items
-  const [timer, setTimer] = useState(0);
-  const countRef = useRef(null);
-
-  const timerStart = () => {
-    countRef.current = setInterval(() => {
-      setTimer((timer) => timer + 1);
-    }, 1000);
-  };
-
-  const timerStop = () => {
-    clearInterval(countRef.current);
-    setTimer(0);
-  };
+  const [timer, start, stop] = useTimer(0);
 
   const toggleFound = (id) => {
     const updatedItems = list.map((item) => {
