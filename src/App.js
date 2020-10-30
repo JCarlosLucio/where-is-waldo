@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className={styles.root}>
-      <Navbar list={list} />
+      <Navbar list={list} timer={timer} />
       {/* where is waldo type image goes here */}
       <GameImage toggleFound={toggleFound} />
     </div>
