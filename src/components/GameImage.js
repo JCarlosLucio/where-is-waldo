@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import useToggle from '../hooks/useToggle';
 import ContextMenu from './ContextMenu';
 import styles from './GameImage.module.scss';
 
 function GameImage() {
   const IMAGE_URL = 'https://i.imgur.com/N4wefbX.jpg';
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
@@ -15,7 +16,7 @@ function GameImage() {
     console.log({ xPos }, { yPos });
     setX(xPos);
     setY(yPos);
-    setMenuOpen(!menuOpen);
+    toggleMenuOpen();
   };
 
   return (
