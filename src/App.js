@@ -24,8 +24,8 @@ function App() {
   return (
     <div className={styles.root}>
       <Navbar list={list} timer={timer} />
-      {/* where is waldo type image goes here */}
       <GameImage toggleFound={toggleFound} />
+      {/* modal for starting game/timer */}
     </div>
   );
 }
