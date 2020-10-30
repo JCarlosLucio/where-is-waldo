@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './Modal.module.scss';
 
 function Modal() {
-  return <div>I'M A MODAL</div>;
+  return <div className={styles.root}>I'M A MODAL</div>;
 }
 
 export default Modal;
