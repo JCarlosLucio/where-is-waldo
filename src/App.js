@@ -33,7 +33,7 @@ function App() {
       {/* modal for starting game/timer */}
       {modalOpen && (
         <Modal>
-          <StartDialog />
+          <StartDialog list={list} />
         </Modal>
       )}
     </div>
