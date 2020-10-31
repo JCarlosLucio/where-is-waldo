@@ -1,6 +1,6 @@
 {
-  "short_name": "WiW App",
-  "name": "Where is Waldo App",
+  "short_name": "findUs",
+  "name": "findUs",
   "icons": [
     {
       "src": "favicon.ico",
