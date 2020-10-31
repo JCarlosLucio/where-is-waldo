@@ -27,12 +27,7 @@ function GameImage({ imageUrl }) {
           Buy his poster https://anomaly-world.com/posters-by-anomaly-world/cyberpunk-poster-ad2222
           */}
       {menuOpen && <ContextMenu xPos={x} yPos={y} />}
-      <img
-        className={styles.image}
-        src={imageUrl}
-        useMap="#the-loc-nar"
-        alt="the loc nar"
-      />
+      <img className={styles.image} src={imageUrl} alt="the loc nar" />
     </div>
   );
 }
