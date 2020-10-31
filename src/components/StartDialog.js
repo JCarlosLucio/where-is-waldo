@@ -2,7 +2,7 @@ import React from 'react';
 import FindList from './FindList';
 import styles from './StartDialog.module.scss';
 
-function StartDialog({ list }) {
+function StartDialog({ list, handleStart }) {
   return (
     <div className={styles.root}>
       <h1>findUS</h1>
@@ -19,7 +19,7 @@ function StartDialog({ list }) {
         difficulty="hard"
         items={list.filter((item) => item.difficulty === 'hard')}
       />
-      <button>START</button>
+      <button onClick={handleStart}>START</button>
     </div>
   );
 }
