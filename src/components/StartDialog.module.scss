@@ -11,6 +11,14 @@
   overflow: hidden;
 }
 
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .root {
