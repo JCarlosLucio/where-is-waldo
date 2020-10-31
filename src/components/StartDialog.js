@@ -1,12 +1,24 @@
 import React from 'react';
+import FindList from './FindList';
 import styles from './StartDialog.module.scss';
 
-function StartDialog() {
+function StartDialog({ list }) {
   return (
     <div className={styles.root}>
       <h1>findUS</h1>
       {/* Image preview (?) */}
-      <p>List of Items to Find</p>
+      <FindList
+        difficulty="easy"
+        items={list.filter((item) => item.difficulty === 'easy')}
+      />
+      <FindList
+        difficulty="medium"
+        items={list.filter((item) => item.difficulty === 'medium')}
+      />
+      <FindList
+        difficulty="hard"
+        items={list.filter((item) => item.difficulty === 'hard')}
+      />
       <button>START</button>
     </div>
   );
