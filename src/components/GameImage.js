@@ -3,8 +3,7 @@ import useToggle from '../hooks/useToggle';
 import ContextMenu from './ContextMenu';
 import styles from './GameImage.module.scss';
 
-function GameImage() {
-  const IMAGE_URL = 'https://i.imgur.com/N4wefbX.jpg';
+function GameImage({ imageUrl }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
@@ -30,7 +29,7 @@ function GameImage() {
       {menuOpen && <ContextMenu xPos={x} yPos={y} />}
       <img
         className={styles.image}
-        src={IMAGE_URL}
+        src={imageUrl}
         useMap="#the-loc-nar"
         alt="the loc nar"
       />
