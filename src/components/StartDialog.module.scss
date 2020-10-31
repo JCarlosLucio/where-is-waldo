@@ -9,3 +9,18 @@
   justify-content: center;
   text-align: center;
 }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .root {
+    background-color: white;
+    border-radius: 2rem;
+    width: 40rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
