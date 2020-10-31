@@ -40,7 +40,11 @@ function App() {
       {/* modal for starting game/timer */}
       {modalOpen && (
         <Modal>
-          <StartDialog list={list} handleStart={handleStart} />
+          <StartDialog
+            list={list}
+            imageUrl={IMAGE_URL}
+            handleStart={handleStart}
+          />
         </Modal>
       )}
     </div>
