@@ -16,6 +16,11 @@ function App() {
   // state for opening Modal
   const [modalOpen, toggleModalOpen] = useToggle(true);
 
+  const handleStart = () => {
+    toggleModalOpen();
+    start();
+  };
+
   const toggleFound = (id) => {
     const updatedItems = list.map((item) => {
       if (item.id === id) {
@@ -33,7 +38,7 @@ function App() {
       {/* modal for starting game/timer */}
       {modalOpen && (
         <Modal>
-          <StartDialog list={list} />
+          <StartDialog list={list} handleStart={handleStart} />
         </Modal>
       )}
     </div>
