@@ -1,11 +1,12 @@
 import React from 'react';
+import Logo from './Logo';
 import FindList from './FindList';
 import styles from './StartDialog.module.scss';
 
 function StartDialog({ list, handleStart }) {
   return (
     <div className={styles.root}>
-      <h1>findUS</h1>
+      <Logo big primary="black" secondary="red" />
       {/* Image preview (?) */}
       <FindList
         difficulty="easy"
