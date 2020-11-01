@@ -4,7 +4,7 @@ import useToggle from './hooks/useToggle';
 import Navbar from './components/Navbar';
 import GameImage from './components/GameImage';
 import Modal from './components/Modal';
-import StartDialog from './components/StartDialog';
+import Carousel from './components/Carousel';
 import seedImageList from './seedImageList';
 import styles from './App.module.scss';
 
@@ -31,12 +31,7 @@ function App() {
       {/* modal for starting game/timer */}
       {modalOpen && (
         <Modal>
-          <StartDialog
-            list={gameImage.itemList}
-            imageUrl={gameImage.imageUrl}
-            imageName={gameImage.imageName}
-            handleStart={handleStart}
-          />
+          <Carousel imageList={seedImageList} handleStart={handleStart} />
         </Modal>
       )}
     </div>
