@@ -3,7 +3,7 @@ import useToggle from '../hooks/useToggle';
 import ContextMenu from './ContextMenu';
 import styles from './GameImage.module.scss';
 
-function GameImage({ imageUrl }) {
+function GameImage({ imageUrl, imageName }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
@@ -27,7 +27,7 @@ function GameImage({ imageUrl }) {
           Buy his poster https://anomaly-world.com/posters-by-anomaly-world/cyberpunk-poster-ad2222
           */}
       {menuOpen && <ContextMenu xPos={x} yPos={y} />}
-      <img className={styles.image} src={imageUrl} alt="the loc nar" />
+      <img className={styles.image} src={imageUrl} alt={imageName} />
     </div>
   );
 }
