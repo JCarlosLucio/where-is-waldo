@@ -34,6 +34,7 @@ function App() {
           <StartDialog
             list={gameImage.itemList}
             imageUrl={gameImage.imageUrl}
+            imageName={gameImage.imageName}
             handleStart={handleStart}
           />
         </Modal>
