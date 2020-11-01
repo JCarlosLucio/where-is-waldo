@@ -8,8 +8,6 @@ import StartDialog from './components/StartDialog';
 import seedImageList from './seedImageList';
 import styles from './App.module.scss';
 
-const IMAGE_URL = 'https://i.imgur.com/N4wefbX.jpg';
-
 function App() {
   // image for game w/ list of items to find
   const [gameImage, setGameImage] = useState(seedImageList[0]);
@@ -23,20 +21,10 @@ function App() {
     start();
   };
 
-  // const toggleFound = (id) => {
-  //   const updatedItems = list.map((item) => {
-  //     if (item.id === id) {
-  //       return { ...item, found: true };
-  //     }
-  //     return item;
-  //   });
-  //   setList(updatedItems);
-  // };
-
   return (
     <div className={styles.root}>
       <Navbar list={gameImage.itemList} timer={timer} />
-      <GameImage toggleFound={toggleFound} imageUrl={gameImage.imageUrl} />
+      <GameImage imageUrl={gameImage.imageUrl} />
       {/* modal for starting game/timer */}
       {modalOpen && (
         <Modal>
