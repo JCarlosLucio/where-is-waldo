@@ -3,7 +3,7 @@ const imageList = [
     id: 'the-loc-nar',
     imageName: 'The Loc Nar',
     imageUrl: 'https://i.imgur.com/N4wefbX.jpg',
-    itemsList: [
+    itemList: [
       // Easy
       {
         id: 'bowser',
