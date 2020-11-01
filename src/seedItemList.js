@@ -8,24 +8,7 @@ const seedItemList = [
     difficulty: 'easy',
     found: false,
   },
-  // {
-  //   id: 'cacodemon',
-  //   name: 'Cacodemon',
-  //   franchise: 'DOOM',
-  //   image: 'https://doomwiki.org/w/images/d/dd/Codex_cacodemon.bimage.png',
-
-  //   difficulty: 'easy',
-  //   found: false,
-  // },
   // Medium
-  // {
-  //   id: 'waldo',
-  //   name: 'Waldo',
-  //   franchise: "Wheres's Waldo?",
-  //   image: 'https://i.redd.it/v5ykpbrwb5q01.jpg',
-  //   difficulty: 'medium',
-  //   found: false,
-  // },
   {
     id: 'yubaba',
     name: 'Yubaba',
@@ -36,14 +19,6 @@ const seedItemList = [
     found: false,
   },
   // Hard
-  // {
-  //   id: 'ash-ketchum',
-  //   name: 'Ash Ketchum',
-  //   franchise: 'Pokemon',
-  //   image: 'https://static.wikia.nocookie.net/pokemon/images/4/41/Kantoash.png',
-  //   difficulty: 'hard',
-  //   found: false,
-  // },
   {
     id: 'the-knight',
     name: 'The Knight',
