@@ -24,7 +24,10 @@ function App() {
   return (
     <div className={styles.root}>
       <Navbar list={gameImage.itemList} timer={timer} />
-      <GameImage imageUrl={gameImage.imageUrl} />
+      <GameImage
+        imageUrl={gameImage.imageUrl}
+        imageName={gameImage.imageName}
+      />
       {/* modal for starting game/timer */}
       {modalOpen && (
         <Modal>
