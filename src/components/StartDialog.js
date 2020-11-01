@@ -4,12 +4,13 @@ import FindList from './FindList';
 import Button from './Button';
 import styles from './StartDialog.module.scss';
 
-function StartDialog({ list, imageUrl, handleStart }) {
+function StartDialog({ list, imageName, imageUrl, handleStart }) {
   return (
     <div className={styles.root}>
       <img className={styles.preview} src={imageUrl} alt="the loc nar" />
       <div className={styles.info}>
         <Logo big primary="black" secondary="red" />
+        <h2>{imageName}</h2>
         <FindList
           difficulty="easy"
           items={list.filter((item) => item.difficulty === 'easy')}
