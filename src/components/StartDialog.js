@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
 import FindList from './FindList';
+import Button from './Button';
 import styles from './StartDialog.module.scss';
 
 function StartDialog({ list, imageUrl, handleStart }) {
@@ -21,7 +22,7 @@ function StartDialog({ list, imageUrl, handleStart }) {
           difficulty="hard"
           items={list.filter((item) => item.difficulty === 'hard')}
         />
-        <button onClick={handleStart}>START</button>
+        <Button handleClick={handleStart}>start</Button>
       </div>
     </div>
   );
