@@ -1,11 +1,11 @@
 .root {
   font-size: 1.5rem;
-  padding: 0.3em 0.8em;
   font-family: inherit;
   text-transform: uppercase;
-  color: white;
+  padding: 0.2em 0.8em;
   border: none;
   border-radius: 1em;
+  color: white;
   background: rgb(42, 44, 128);
   background: linear-gradient(
     93deg,
@@ -13,6 +13,10 @@
     rgba(253, 29, 29, 1) 50%,
     rgba(252, 176, 69, 1) 100%
   );
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 // Medium devices (tablets, 768px and up)
