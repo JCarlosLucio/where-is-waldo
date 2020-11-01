@@ -3,6 +3,16 @@
   padding: 0.3em 0.8em;
   font-family: inherit;
   text-transform: uppercase;
+  color: white;
+  border: none;
+  border-radius: 1em;
+  background: rgb(42, 44, 128);
+  background: linear-gradient(
+    93deg,
+    rgba(42, 44, 128, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
 }
 
 // Medium devices (tablets, 768px and up)
