@@ -16,7 +16,8 @@ function App() {
   // state for opening Modal
   const [modalOpen, toggleModalOpen] = useToggle(true);
 
-  const handleStart = () => {
+  const handleStart = (image) => {
+    setGameImage(image);
     toggleModalOpen();
     start();
   };
