@@ -20,12 +20,6 @@ function GameImage({ imageUrl, imageName }) {
 
   return (
     <div className={styles.root} onClick={handleClick}>
-      {/* 
-          The Loc Nar by Egor Klyuchnyk
-          Instagram https://www.instagram.com/ad.2.222/
-          Patreon https://www.patreon.com/Egor
-          Buy his poster https://anomaly-world.com/posters-by-anomaly-world/cyberpunk-poster-ad2222
-          */}
       {menuOpen && <ContextMenu xPos={x} yPos={y} />}
       <img className={styles.image} src={imageUrl} alt={imageName} />
     </div>
