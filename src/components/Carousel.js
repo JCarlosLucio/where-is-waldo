@@ -21,7 +21,14 @@ function Carousel({ imageList, handleStart }) {
     </div>
   ));
   console.log(images);
-  return <AliceCarousel mouseTracking items={images} responsive={responsive} />;
+  return (
+    <AliceCarousel
+      mouseTracking
+      disableButtonsControls
+      items={images}
+      responsive={responsive}
+    />
+  );
 }
 
 export default Carousel;
