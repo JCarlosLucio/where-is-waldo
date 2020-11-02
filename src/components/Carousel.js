@@ -1,6 +1,7 @@
 import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import StartDialog from './StartDialog';
+import Logo from './Logo';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import styles from './Carousel.module.scss';
 
@@ -24,6 +25,7 @@ function Carousel({ imageList, handleStart }) {
   console.log(images);
   return (
     <div className={styles.root}>
+      <Logo big primary="white" secondary="red" />
       <AliceCarousel
         mouseTracking
         disableButtonsControls
