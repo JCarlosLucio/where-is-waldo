@@ -2,7 +2,7 @@
   background-color: white;
   border-radius: 2rem;
   width: 22rem;
-  height: 27rem;
+  height: 24rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -12,7 +12,7 @@
 }
 
 .name {
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .info {
@@ -36,7 +36,7 @@
     flex-direction: row;
   }
   .name {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .preview {
     max-height: auto;
