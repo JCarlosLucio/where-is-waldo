@@ -1,16 +1,17 @@
 .root {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
+  padding: 0 1.5em 0.5em 1.5em;
 }
 .easy {
-  color: green;
+  color: rgb(129, 189, 129);
 }
 .medium {
-  color: orange;
+  color: rgb(226, 187, 113);
 }
 .hard {
-  color: red;
+  color: rgb(230, 90, 90);
 }
