@@ -26,6 +26,7 @@ function App() {
     <div className={styles.root}>
       <Navbar list={gameImage.itemList} timer={timer} />
       <GameImage
+        list={gameImage.itemList}
         imageUrl={gameImage.imageUrl}
         imageName={gameImage.imageName}
       />
