@@ -17,6 +17,7 @@ function Carousel({ imageList, handleStart }) {
       <StartDialog
         list={image.itemList}
         imageName={image.imageName}
+        imageAuthor={image.imageAuthor}
         imageUrl={image.imageUrl}
         handleStart={() => handleStart(image)}
       />
