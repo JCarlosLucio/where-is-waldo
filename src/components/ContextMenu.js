@@ -1,13 +1,19 @@
 import React from 'react';
 import styles from './ContextMenu.module.scss';
 
-function ContextMenu({ xPos, yPos }) {
+function ContextMenu({ list, xPos, yPos }) {
+  const notFound = list.filter((item) => !item.found).map((item) => (
+    <li key={item.id} className={styles.item}>
+      {item.name}
+    </li>
+  ));
+
   return (
     <div
       className={styles.root}
       style={{ top: `calc(${yPos}px - 3.75rem)`, left: `${xPos}px` }}
     >
-      <h1>Menu</h1>
+      <ul className={styles.list}>{notFound}</ul>
     </div>
   );
 }
