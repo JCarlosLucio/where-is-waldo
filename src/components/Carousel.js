@@ -26,6 +26,7 @@ function Carousel({ imageList, handleStart }) {
   return (
     <div className={styles.root}>
       <Logo big primary="white" secondary="red" />
+      <p className={styles.instructions}>Swipe to choose image to play</p>
       <AliceCarousel
         mouseTracking
         disableButtonsControls
