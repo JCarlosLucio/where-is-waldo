@@ -1,7 +1,7 @@
 .root {
   background-color: white;
   border-radius: 2rem;
-  width: 20rem;
+  width: 22rem;
   height: 30rem;
   display: flex;
   flex-direction: row;
@@ -21,18 +21,18 @@
 
 .preview {
   max-height: auto;
-  width: 12rem;
+  width: 20rem;
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .root {
-    width: 40rem;
-    height: 40rem;
+    width: 45rem;
+    height: 35rem;
     flex-direction: row;
   }
   .preview {
     max-height: auto;
-    width: 18rem;
+    width: 55rem;
   }
 }
