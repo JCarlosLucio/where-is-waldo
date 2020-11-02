@@ -19,6 +19,7 @@ const imageList = [
     */
     id: 'the-loc-nar',
     imageName: 'The Loc Nar',
+    imageAuthor: 'Egor Klyuchnyk',
     imageUrl: theLocNar,
     itemList: [
       // Easy
@@ -59,6 +60,7 @@ const imageList = [
     */
     id: 'universe-113',
     imageName: 'Universe 113',
+    imageAuthor: 'Egor Klyuchnyk',
     imageUrl: universe113,
     itemList: [
       // Easy
