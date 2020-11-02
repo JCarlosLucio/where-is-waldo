@@ -2,13 +2,17 @@
   background-color: white;
   border-radius: 2rem;
   width: 22rem;
-  height: 30rem;
+  height: 27rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   text-align: center;
   overflow: hidden;
+}
+
+.name {
+  font-size: 1rem;
 }
 
 .info {
@@ -30,6 +34,9 @@
     width: 45rem;
     height: 35rem;
     flex-direction: row;
+  }
+  .name {
+    font-size: 1.5rem;
   }
   .preview {
     max-height: auto;

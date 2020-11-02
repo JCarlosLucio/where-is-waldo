@@ -10,7 +10,7 @@ function StartDialog({ list, imageName, imageUrl, handleStart }) {
       <img className={styles.preview} src={imageUrl} alt="the loc nar" />
       <div className={styles.info}>
         <Logo big primary="black" secondary="red" />
-        <h2>{imageName}</h2>
+        <h2 className={styles.name}>{imageName}</h2>
         <FindList
           difficulty="easy"
           items={list.filter((item) => item.difficulty === 'easy')}
