@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from './Logo';
 import FindList from './FindList';
 import Button from './Button';
 import styles from './StartDialog.module.scss';
@@ -9,7 +8,6 @@ function StartDialog({ list, imageName, imageUrl, handleStart }) {
     <div className={styles.root}>
       <img className={styles.preview} src={imageUrl} alt="the loc nar" />
       <div className={styles.info}>
-        <Logo big primary="black" secondary="red" />
         <h2 className={styles.name}>{imageName}</h2>
         <FindList
           difficulty="easy"
