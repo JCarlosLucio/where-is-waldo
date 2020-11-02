@@ -3,12 +3,13 @@ import FindList from './FindList';
 import Button from './Button';
 import styles from './StartDialog.module.scss';
 
-function StartDialog({ list, imageName, imageUrl, handleStart }) {
+function StartDialog({ list, imageName, imageAuthor, imageUrl, handleStart }) {
   return (
     <div className={styles.root}>
       <img className={styles.preview} src={imageUrl} alt="the loc nar" />
       <div className={styles.info}>
         <h2 className={styles.name}>{imageName}</h2>
+        <p className={styles.author}>by {imageAuthor}</p>
         <FindList
           difficulty="easy"
           items={list.filter((item) => item.difficulty === 'easy')}
