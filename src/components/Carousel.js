@@ -12,7 +12,7 @@ const responsive = {
 
 function Carousel({ imageList, handleStart }) {
   const images = imageList.map((image) => (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <div className={styles['image-card']}>
       <StartDialog
         list={image.itemList}
         imageName={image.imageName}
