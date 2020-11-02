@@ -3,9 +3,21 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  font-size: 0.8rem;
 }
 
 .item-image {
   width: auto;
-  max-height: 5rem;
+  max-height: 4rem;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .root {
+    font-size: 1rem;
+  }
+  .item-image {
+    width: auto;
+    max-height: 5rem;
+  }
 }
