@@ -1,6 +1,21 @@
 .root {
   position: absolute;
-  height: 15rem;
-  width: 15rem;
-  background-color: white;
+  height: auto;
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.list {
+  list-style: none;
+}
+
+.item {
+  padding: 0.3rem 0.7rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+  }
 }
