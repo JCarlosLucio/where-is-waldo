@@ -2,6 +2,7 @@ import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import StartDialog from './StartDialog';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import styles from './Carousel.module.scss';
 
 const responsive = {
   0: { items: 1 },
@@ -22,12 +23,14 @@ function Carousel({ imageList, handleStart }) {
   ));
   console.log(images);
   return (
-    <AliceCarousel
-      mouseTracking
-      disableButtonsControls
-      items={images}
-      responsive={responsive}
-    />
+    <div className={styles.root}>
+      <AliceCarousel
+        mouseTracking
+        disableButtonsControls
+        items={images}
+        responsive={responsive}
+      />
+    </div>
   );
 }
 
