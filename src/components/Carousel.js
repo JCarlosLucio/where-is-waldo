@@ -22,7 +22,7 @@ function Carousel({ imageList, handleStart }) {
       />
     </div>
   ));
-  console.log(images);
+
   return (
     <div className={styles.root}>
       <Logo big primary="white" secondary="red" />
