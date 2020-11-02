@@ -16,7 +16,7 @@ function Carousel({ imageList, handleStart }) {
         list={image.itemList}
         imageName={image.imageName}
         imageUrl={image.imageUrl}
-        handleStart={handleStart}
+        handleStart={() => handleStart(image)}
       />
     </div>
   ));
