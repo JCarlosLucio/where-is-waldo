@@ -1,3 +1,6 @@
+import theLocNar from './assets/the-loc-nar.jpg';
+import universe113 from './assets/universe-113.jpg';
+
 const imageList = [
   {
     /* 
@@ -8,7 +11,7 @@ const imageList = [
     */
     id: 'the-loc-nar',
     imageName: 'The Loc Nar',
-    imageUrl: 'https://i.imgur.com/N4wefbX.jpg',
+    imageUrl: theLocNar,
     itemList: [
       // Easy
       {
@@ -51,7 +54,7 @@ const imageList = [
     */
     id: 'universe-113',
     imageName: 'Universe 113',
-    imageUrl: 'https://i.redd.it/y2ljm914ovi51.jpg',
+    imageUrl: universe113,
     itemList: [
       // Easy
       {
