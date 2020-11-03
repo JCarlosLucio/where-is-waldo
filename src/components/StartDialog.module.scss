@@ -28,8 +28,10 @@
 }
 
 .preview {
-  max-height: auto;
-  width: 20rem;
+  max-height: 100%;
+  height: 100%;
+  width: auto;
+  max-width: 10rem;
 }
 
 // Medium devices (tablets, 768px and up)
@@ -46,7 +48,9 @@
     font-size: 0.8rem;
   }
   .preview {
-    max-height: auto;
-    width: 55rem;
+    max-height: max-content;
+    height: auto;
+    width: auto;
+    max-width: 25rem;
   }
 }
