@@ -6,17 +6,15 @@ import styles from './GameImage.module.scss';
 
 function GameImage({ list, imageUrl, imageName }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
-  const [xMenu, setXMenu] = useState(0);
-  const [yMenu, setYMenu] = useState(0);
+  const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
   const [cursorCoords, setCursorCoords] = useState({ x: 0, y: 0 });
 
   const handleImageClick = (e) => {
     e.preventDefault();
-    const xPos = e.pageX;
-    const yPos = e.pageY;
-    console.log({ xPos }, { yPos });
-    setXMenu(xPos);
-    setYMenu(yPos);
+    const x = e.pageX;
+    const y = e.pageY;
+    console.log({ x }, { y });
+    setMenuCoords({ x, y });
     toggleMenuOpen();
   };
   const handleMouseMove = (e) => {
@@ -39,8 +37,8 @@ function GameImage({ list, imageUrl, imageName }) {
       {menuOpen && (
         <ContextMenu
           list={list}
-          xPos={xMenu}
-          yPos={yMenu}
+          xPos={menuCoords.x}
+          yPos={menuCoords.y}
           handleMenuClick={handleMenuClick}
         />
       )}
