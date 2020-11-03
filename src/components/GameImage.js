@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useToggle from '../hooks/useToggle';
 import ContextMenu from './ContextMenu';
+import CustomCursor from './CustomCursor';
 import styles from './GameImage.module.scss';
 
 function GameImage({ list, imageUrl, imageName }) {
@@ -20,6 +21,7 @@ function GameImage({ list, imageUrl, imageName }) {
 
   return (
     <div className={styles.root} onClick={handleClick}>
+      <CustomCursor />
       {menuOpen && <ContextMenu list={list} xPos={x} yPos={y} />}
       <img className={styles.image} src={imageUrl} alt={imageName} />
     </div>
