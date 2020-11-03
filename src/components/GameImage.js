@@ -8,6 +8,8 @@ function GameImage({ list, imageUrl, imageName }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [xMenu, setXMenu] = useState(0);
   const [yMenu, setYMenu] = useState(0);
+  const [xCursor, setXCursor] = useState(0);
+  const [yCursor, setYCursor] = useState(0);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -21,7 +23,7 @@ function GameImage({ list, imageUrl, imageName }) {
 
   return (
     <div className={styles.root} onClick={handleClick}>
-      <CustomCursor />
+      <CustomCursor xPos={xCursor} yPos={yCursor} />
       {menuOpen && <ContextMenu list={list} xPos={xMenu} yPos={yMenu} />}
       <img className={styles.image} src={imageUrl} alt={imageName} />
     </div>
