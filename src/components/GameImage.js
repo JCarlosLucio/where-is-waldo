@@ -9,19 +9,20 @@ function GameImage({ list, imageUrl, imageName }) {
   const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
   const [cursorCoords, setCursorCoords] = useState({ x: 0, y: 0 });
 
-  const handleImageClick = (e) => {
-    e.preventDefault();
-    const x = e.pageX;
-    const y = e.pageY;
+  const handleImageClick = (event) => {
+    event.preventDefault();
+    const { pageX: x, pageY: y } = event;
+
     console.log({ x }, { y });
     setMenuCoords({ x, y });
     toggleMenuOpen();
   };
-  const handleMouseMove = (e) => {
-    const x = e.pageX;
-    const y = e.pageY;
+
+  const handleMouseMove = (event) => {
+    const { pageX: x, pageY: y } = event;
     setCursorCoords({ x, y });
   };
+
   const handleMenuClick = (id, x, y) => {
     console.log({ id }, { x }, { y });
     toggleMenuOpen();
