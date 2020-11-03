@@ -6,23 +6,23 @@ import styles from './GameImage.module.scss';
 
 function GameImage({ list, imageUrl, imageName }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
+  const [xMenu, setXMenu] = useState(0);
+  const [yMenu, setYMenu] = useState(0);
 
   const handleClick = (e) => {
     e.preventDefault();
     const xPos = e.pageX;
     const yPos = e.pageY;
     console.log({ xPos }, { yPos });
-    setX(xPos);
-    setY(yPos);
+    setXMenu(xPos);
+    setYMenu(yPos);
     toggleMenuOpen();
   };
 
   return (
     <div className={styles.root} onClick={handleClick}>
       <CustomCursor />
-      {menuOpen && <ContextMenu list={list} xPos={x} yPos={y} />}
+      {menuOpen && <ContextMenu list={list} xPos={xMenu} yPos={yMenu} />}
       <img className={styles.image} src={imageUrl} alt={imageName} />
     </div>
   );
