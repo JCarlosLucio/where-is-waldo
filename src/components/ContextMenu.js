@@ -1,9 +1,16 @@
 import React from 'react';
 import styles from './ContextMenu.module.scss';
 
-function ContextMenu({ list, xPos, yPos }) {
+function ContextMenu({ list, xPos, yPos, handleMenuClick }) {
   const notFound = list.filter((item) => !item.found).map((item) => (
-    <li key={item.id} className={styles.item}>
+    <li
+      key={item.id}
+      onClick={(e) => {
+        e.stopPropagation();
+        handleMenuClick(item.id, xPos, yPos);
+      }}
+      className={styles.item}
+    >
       {item.name}
     </li>
   ));
