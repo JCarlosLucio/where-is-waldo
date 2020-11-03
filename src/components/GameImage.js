@@ -8,8 +8,7 @@ function GameImage({ list, imageUrl, imageName }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [xMenu, setXMenu] = useState(0);
   const [yMenu, setYMenu] = useState(0);
-  const [xCursor, setXCursor] = useState(0);
-  const [yCursor, setYCursor] = useState(0);
+  const [cursorCoords, setCursorCoords] = useState({ x: 0, y: 0 });
 
   const handleImageClick = (e) => {
     e.preventDefault();
@@ -21,10 +20,9 @@ function GameImage({ list, imageUrl, imageName }) {
     toggleMenuOpen();
   };
   const handleMouseMove = (e) => {
-    const xPos = e.pageX;
-    const yPos = e.pageY;
-    setXCursor(xPos);
-    setYCursor(yPos);
+    const x = e.pageX;
+    const y = e.pageY;
+    setCursorCoords({ x, y });
   };
   const handleMenuClick = (id, x, y) => {
     console.log({ id }, { x }, { y });
@@ -37,7 +35,7 @@ function GameImage({ list, imageUrl, imageName }) {
       onMouseMove={handleMouseMove}
       onClick={handleImageClick}
     >
-      <CustomCursor xPos={xCursor} yPos={yCursor} />
+      <CustomCursor xPos={cursorCoords.x} yPos={cursorCoords.y} />
       {menuOpen && (
         <ContextMenu
           list={list}
