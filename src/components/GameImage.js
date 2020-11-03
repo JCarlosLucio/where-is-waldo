@@ -20,9 +20,19 @@ function GameImage({ list, imageUrl, imageName }) {
     setYMenu(yPos);
     toggleMenuOpen();
   };
+  const handleMouseMove = (e) => {
+    const xPos = e.pageX;
+    const yPos = e.pageY;
+    setXCursor(xPos);
+    setYCursor(yPos);
+  };
 
   return (
-    <div className={styles.root} onClick={handleClick}>
+    <div
+      className={styles.root}
+      onMouseMove={handleMouseMove}
+      onClick={handleClick}
+    >
       <CustomCursor xPos={xCursor} yPos={yCursor} />
       {menuOpen && <ContextMenu list={list} xPos={xMenu} yPos={yMenu} />}
       <img className={styles.image} src={imageUrl} alt={imageName} />
