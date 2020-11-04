@@ -4,7 +4,7 @@ import ContextMenu from './ContextMenu';
 import CustomCursor from './CustomCursor';
 import styles from './GameImage.module.scss';
 
-function GameImage({ list, imageUrl, imageName }) {
+function GameImage({ list, imageUrl, imageName, toggleFound }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
   const [cursorCoords, setCursorCoords] = useState({ x: 0, y: 0 });
@@ -29,6 +29,9 @@ function GameImage({ list, imageUrl, imageName }) {
     const relY = (y - 60) / height; // 60 is height of navbar
     const testX = Math.abs(relX - relX0) < 0.042; // 0.042  max relative deltaX
     const testY = Math.abs(relY - relY0) < 0.01; // 0.01  max relative deltaY
+    if (testX && testY) {
+      toggleFound(itemId);
+    }
     console.log(
       { itemId },
       { relX0 },
