@@ -23,8 +23,12 @@ function GameImage({ list, imageUrl, imageName, toggleFound }) {
   };
 
   const handleMenuClick = (itemId, relX0, relY0, x, y) => {
+    // x / y coords are taken from complete page (take navbar into account)
+    // width / height reference GameImage (don't take navbar into account)
     const width = imgRef.current.offsetWidth;
     const height = imgRef.current.offsetHeight;
+
+    // use relative form so it can work on any screen size
     const relX = x / width;
     const relY = (y - 60) / height; // 60 is height of navbar
     const testX = Math.abs(relX - relX0) < 0.042; // 0.042  max relative deltaX
