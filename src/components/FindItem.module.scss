@@ -4,6 +4,10 @@
   align-items: center;
   width: 100%;
   font-size: 0.8rem;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .item-image {
