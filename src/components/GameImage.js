@@ -8,25 +8,11 @@ function GameImage({ list, imageUrl, imageName }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
   const [cursorCoords, setCursorCoords] = useState({ x: 0, y: 0 });
-  const imgRef = useRef(null);
+  const imgRef = useRef();
 
   const handleImageClick = (event) => {
     event.preventDefault();
     const { pageX: x, pageY: y } = event;
-
-    console.log(
-      { x },
-      { y },
-      window.innerWidth,
-      document.body.clientWidth,
-      document.body.scrollHeight,
-      document.body.clientHeight,
-      document.body.offsetHeight,
-      imgRef.current.offsetWidth,
-      imgRef.current.offsetHeight,
-      { relX: x / imgRef.current.offsetWidth },
-      { relY: (y - 60) / imgRef.current.offsetHeight }
-    );
     setMenuCoords({ x, y });
     toggleMenuOpen();
   };
@@ -37,7 +23,16 @@ function GameImage({ list, imageUrl, imageName }) {
   };
 
   const handleMenuClick = (id, x, y) => {
-    console.log({ id }, { x }, { y });
+    const width = imgRef.current.offsetWidth;
+    const height = imgRef.current.offsetHeight;
+    console.log(
+      { id },
+      { x },
+      { y },
+      { relX: x / width },
+      { relY: (y - 60) / height }
+    );
+
     toggleMenuOpen();
   };
 
