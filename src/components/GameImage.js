@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import useToggle from '../hooks/useToggle';
 import ContextMenu from './ContextMenu';
 import CustomCursor from './CustomCursor';
@@ -8,12 +8,25 @@ function GameImage({ list, imageUrl, imageName }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
   const [cursorCoords, setCursorCoords] = useState({ x: 0, y: 0 });
+  const imgRef = useRef(null);
 
   const handleImageClick = (event) => {
     event.preventDefault();
     const { pageX: x, pageY: y } = event;
 
-    console.log({ x }, { y });
+    console.log(
+      { x },
+      { y },
+      window.innerWidth,
+      document.body.clientWidth,
+      document.body.scrollHeight,
+      document.body.clientHeight,
+      document.body.offsetHeight,
+      imgRef.current.offsetWidth,
+      imgRef.current.offsetHeight,
+      { relX: x / imgRef.current.offsetWidth },
+      { relY: (y - 60) / imgRef.current.offsetHeight }
+    );
     setMenuCoords({ x, y });
     toggleMenuOpen();
   };
@@ -33,6 +46,7 @@ function GameImage({ list, imageUrl, imageName }) {
       className={styles.root}
       onMouseMove={handleMouseMove}
       onClick={handleImageClick}
+      ref={imgRef}
     >
       <CustomCursor xPos={cursorCoords.x} yPos={cursorCoords.y} />
       {menuOpen && (
