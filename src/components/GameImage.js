@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import useToggle from '../hooks/useToggle';
 import ContextMenu from './ContextMenu';
 import CustomCursor from './CustomCursor';
+import Snackbar from './Snackbar';
 import styles from './GameImage.module.scss';
 
 function GameImage({ list, imageUrl, imageName, toggleFound }) {
@@ -56,6 +57,7 @@ function GameImage({ list, imageUrl, imageName, toggleFound }) {
       onClick={handleImageClick}
       ref={imgRef}
     >
+      <Snackbar bg="rgb(0, 187, 0)">You found Bowser!</Snackbar>
       <CustomCursor xPos={cursorCoords.x} yPos={cursorCoords.y} />
       {menuOpen && (
         <ContextMenu
