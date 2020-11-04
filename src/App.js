@@ -22,6 +22,21 @@ function App() {
     start();
   };
 
+  const toggleFound = (itemId) => {
+    // returns image Object w/ itemList w/updated item.found
+    const updatedImage = {
+      ...gameImage,
+      itemList: gameImage.itemList.map((item) => {
+        if (item.id === itemId) {
+          return { ...item, found: true };
+        } else {
+          return item;
+        }
+      }),
+    };
+    setGameImage(updatedImage);
+  };
+
   return (
     <div className={styles.root}>
       <Navbar list={gameImage.itemList} timer={timer} />
@@ -29,6 +44,7 @@ function App() {
         list={gameImage.itemList}
         imageUrl={gameImage.imageUrl}
         imageName={gameImage.imageName}
+        toggleFound={toggleFound}
       />
       {/* modal for starting game/timer */}
       {modalOpen && (
