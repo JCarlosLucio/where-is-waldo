@@ -22,15 +22,21 @@ function GameImage({ list, imageUrl, imageName }) {
     setCursorCoords({ x, y });
   };
 
-  const handleMenuClick = (id, x, y) => {
+  const handleMenuClick = (itemId, relX0, relY0, x, y) => {
     const width = imgRef.current.offsetWidth;
     const height = imgRef.current.offsetHeight;
+    const relX = x / width;
+    const relY = (y - 60) / height; // 60 is height of navbar
+    const testX = Math.abs(relX - relX0) < 0.042; // 0.042  max relative deltaX
+    const testY = Math.abs(relY - relY0) < 0.01; // 0.01  max relative deltaY
     console.log(
-      { id },
-      { x },
-      { y },
-      { relX: x / width },
-      { relY: (y - 60) / height }
+      { itemId },
+      { relX0 },
+      { relY0 },
+      { relX },
+      { relY },
+      { testX },
+      { testY }
     );
 
     toggleMenuOpen();
