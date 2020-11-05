@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import useToggle from '../hooks/useToggle';
+import useSnackbar from '../hooks/useSnackbar';
 import ContextMenu from './ContextMenu';
 import CustomCursor from './CustomCursor';
 import Snackbar from './Snackbar';
@@ -9,6 +10,14 @@ function GameImage({ list, imageUrl, imageName, toggleFound }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
   const [cursorCoords, setCursorCoords] = useState({ x: 0, y: 0 });
+  const [
+    textSnackbar,
+    bgSnackbar,
+    openSnackbar,
+    setTextSnackbar,
+    setBgSnackbar,
+    toggleSnackbar,
+  ] = useSnackbar('', 'gray', 3000);
   const imgRef = useRef();
 
   const handleImageClick = (event) => {
@@ -35,7 +44,14 @@ function GameImage({ list, imageUrl, imageName, toggleFound }) {
     const testX = Math.abs(relX - relX0) < 0.042; // 0.042  max relative deltaX
     const testY = Math.abs(relY - relY0) < 0.01; // 0.01  max relative deltaY
     if (testX && testY) {
+      setTextSnackbar(`You have found ${itemId}`);
+      setBgSnackbar('green');
+      toggleSnackbar();
       toggleFound(itemId);
+    } else {
+      setTextSnackbar('Keep looking!');
+      setBgSnackbar('red');
+      toggleSnackbar();
     }
     console.log(
       { itemId },
@@ -57,7 +73,7 @@ function GameImage({ list, imageUrl, imageName, toggleFound }) {
       onClick={handleImageClick}
       ref={imgRef}
     >
-      <Snackbar bg="rgb(0, 187, 0)">You found Bowser!</Snackbar>
+      {openSnackbar && <Snackbar bg={bgSnackbar}>{textSnackbar}</Snackbar>}
       <CustomCursor xPos={cursorCoords.x} yPos={cursorCoords.y} />
       {menuOpen && (
         <ContextMenu
