@@ -7,7 +7,7 @@ function ContextMenu({ list, xPos, yPos, handleMenuClick }) {
       key={item.id}
       onClick={(e) => {
         e.stopPropagation();
-        handleMenuClick(item.id, item.relX0, item.relY0, xPos, yPos);
+        handleMenuClick(item.name, item.id, item.relX0, item.relY0, xPos, yPos);
       }}
       className={styles.item}
     >
