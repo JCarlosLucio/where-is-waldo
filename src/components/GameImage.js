@@ -32,7 +32,7 @@ function GameImage({ list, imageUrl, imageName, toggleFound }) {
     setCursorCoords({ x, y });
   };
 
-  const handleMenuClick = (itemId, relX0, relY0, x, y) => {
+  const handleMenuClick = (itemName, itemId, relX0, relY0, x, y) => {
     // x / y coords are taken from complete page (take navbar into account)
     // width / height reference GameImage (don't take navbar into account)
     const width = imgRef.current.offsetWidth;
@@ -44,7 +44,7 @@ function GameImage({ list, imageUrl, imageName, toggleFound }) {
     const testX = Math.abs(relX - relX0) < 0.042; // 0.042  max relative deltaX
     const testY = Math.abs(relY - relY0) < 0.01; // 0.01  max relative deltaY
     if (testX && testY) {
-      setTextSnackbar(`You have found ${itemId}`);
+      setTextSnackbar(`You have found ${itemName}!`);
       setBgSnackbar('green');
       toggleSnackbar();
       toggleFound(itemId);
