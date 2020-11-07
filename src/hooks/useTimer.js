@@ -10,12 +10,17 @@ function useTimer(initialVal = 0) {
       setTimer((timer) => timer + 1);
     }, 1000);
   };
-  // stops and resets timer
+  // stops timer
   const stop = () => {
     clearInterval(countRef.current);
   };
+  // stops and resets timer
+  const reset = () => {
+    clearInterval(countRef.current);
+    setTimer(0);
+  };
 
-  return [timer, start, stop];
+  return [timer, start, stop, reset];
 }
 
 export default useTimer;
