@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useTimer from './hooks/useTimer';
 import useToggle from './hooks/useToggle';
 import Navbar from './components/Navbar';
@@ -18,6 +18,20 @@ function App() {
   const [modalOpen, toggleModalOpen] = useToggle(true);
   // state for showing Carousel or HighScores
   const [stageModal, setStageModal] = useState('start');
+
+  useEffect(
+    () => {
+      const win = gameImage.itemList.every((item) => item.found);
+      if (win && modalOpen === false) {
+        console.log('YOU WIN');
+        console.log(timer);
+        stop();
+        setStageModal('highscore');
+        toggleModalOpen();
+      }
+    },
+    [gameImage, timer, stop, setStageModal, modalOpen, toggleModalOpen]
+  );
 
   const handleStart = (image) => {
     setGameImage(image);
