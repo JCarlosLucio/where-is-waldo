@@ -1,0 +1,21 @@
+.root {
+  background-color: white;
+  border-radius: 2rem;
+  width: 22rem;
+  height: 24rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .root {
+    width: 45rem;
+    height: 35rem;
+    flex-direction: row;
+  }
+}
