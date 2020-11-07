@@ -13,7 +13,6 @@ function useTimer(initialVal = 0) {
   // stops and resets timer
   const stop = () => {
     clearInterval(countRef.current);
-    setTimer(0);
   };
 
   return [timer, start, stop];
