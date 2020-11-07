@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import GameImage from './components/GameImage';
 import Modal from './components/Modal';
 import Carousel from './components/Carousel';
+
 import seedImageList from './seedImageList';
 import styles from './App.module.scss';
 
@@ -15,6 +16,8 @@ function App() {
   const [timer, start, stop] = useTimer(0);
   // state for opening Modal
   const [modalOpen, toggleModalOpen] = useToggle(true);
+  // state for showing Carousel or HighScores
+  const [stageModal, setStageModal] = useState('start');
 
   const handleStart = (image) => {
     setGameImage(image);
