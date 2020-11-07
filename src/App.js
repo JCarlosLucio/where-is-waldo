@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import GameImage from './components/GameImage';
 import Modal from './components/Modal';
 import Carousel from './components/Carousel';
-
+import HighScoreDialog from './components/HighScoreDialog';
 import seedImageList from './seedImageList';
 import styles from './App.module.scss';
 
@@ -52,7 +52,11 @@ function App() {
       {/* modal for starting game/timer */}
       {modalOpen && (
         <Modal>
-          <Carousel imageList={seedImageList} handleStart={handleStart} />
+          {stageModal === 'highscore' ? (
+            <HighScoreDialog />
+          ) : (
+            <Carousel imageList={seedImageList} handleStart={handleStart} />
+          )}
         </Modal>
       )}
     </div>
