@@ -35,6 +35,7 @@ function HighScoreDialog() {
             onChange={handleChange}
             placeholder="Your Name"
             autoFocus
+            required
           />
         </label>
         <Button type="submit">Submit</Button>
