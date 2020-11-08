@@ -29,12 +29,13 @@ function HighScoreDialog() {
         <label>
           Name
           <input
+            className={styles.name}
             type="text"
             name="name"
             value={name}
             onChange={handleChange}
             maxLength="3"
-            placeholder="Your Name"
+            placeholder="AAA"
             autoFocus
             required
           />

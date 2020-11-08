@@ -32,6 +32,13 @@
   width: 9rem;
 }
 
+.name {
+  text-transform: uppercase;
+  text-align: center;
+  width: 3rem;
+  margin: 0 0.5rem;
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .root {
