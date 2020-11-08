@@ -4,7 +4,7 @@
   width: 22rem;
   height: 24rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -16,6 +16,5 @@
   .root {
     width: 45rem;
     height: 35rem;
-    flex-direction: row;
   }
 }
