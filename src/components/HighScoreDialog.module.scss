@@ -33,10 +33,12 @@
 }
 
 .name {
+  font-size: 1.5rem;
+  width: 3em;
+  height: 2em;
   text-transform: uppercase;
   text-align: center;
-  width: 3rem;
-  margin: 0 0.5rem;
+  overflow: hidden;
 }
 
 // Medium devices (tablets, 768px and up)
@@ -53,5 +55,8 @@
   }
   .form {
     width: 12rem;
+  }
+  .name {
+    font-size: 2rem;
   }
 }
