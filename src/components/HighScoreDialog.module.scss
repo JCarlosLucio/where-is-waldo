@@ -10,11 +10,18 @@
   text-align: center;
   overflow: hidden;
 }
+
 .highscores {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.scores {
+  text-align: center;
+  font-size: 0.8rem;
 }
 
 .form {
@@ -22,6 +29,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  width: 9rem;
 }
 
 // Medium devices (tablets, 768px and up)
@@ -29,5 +37,14 @@
   .root {
     width: 45rem;
     height: 35rem;
+  }
+  .highscores {
+    font-size: 1rem;
+  }
+  .scores {
+    font-size: 1.3rem;
+  }
+  .form {
+    width: 12rem;
   }
 }
