@@ -26,20 +26,19 @@ function HighScoreDialog() {
       <form className={styles.form}>
         <h2>Add Your Score</h2>
         <h3>Your Time: 00:03:21</h3>
-        <label>
-          Name
-          <input
-            className={styles.name}
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleChange}
-            maxLength="3"
-            placeholder="AAA"
-            autoFocus
-            required
-          />
-        </label>
+        <label htmlFor="name">Name</label>
+        <input
+          className={styles.name}
+          type="text"
+          id="name"
+          name="name"
+          value={name}
+          onChange={handleChange}
+          maxLength="3"
+          placeholder="AAA"
+          autoFocus
+          required
+        />
         <Button type="submit">Submit</Button>
       </form>
     </div>
