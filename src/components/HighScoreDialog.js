@@ -1,8 +1,11 @@
 import React from 'react';
+import useInput from '../hooks/useInput';
 import Button from './Button';
 import styles from './HighScoreDialog.module.scss';
 
 function HighScoreDialog() {
+  const [name, handleChange] = useInput('');
+
   return (
     <div className={styles.root}>
       <div className={styles.highscores}>
@@ -25,7 +28,14 @@ function HighScoreDialog() {
         <h3>Your Time: 00:03:21</h3>
         <label>
           Name
-          <input type="text" name="name" placeholder="Your Name" autoFocus />
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            placeholder="Your Name"
+            autoFocus
+          />
         </label>
         <Button type="submit">Submit</Button>
       </form>
