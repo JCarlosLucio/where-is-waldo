@@ -7,17 +7,11 @@ function HighScoreDialog() {
     <div className={styles.root}>
       <div>
         <h1>High Scores</h1>
-        <ul>
-          <li>
-            <p>1 Name 00:02:10</p>
-          </li>
-          <li>
-            <p>2 Name 00:02:11</p>
-          </li>
-          <li>
-            <p>3 Name 00:02:12</p>
-          </li>
-        </ul>
+        <ol>
+          <li>Name 00:02:10</li>
+          <li>Name 00:02:11</li>
+          <li>Name 00:02:12</li>
+        </ol>
       </div>
       <form>
         <h3>Your Time: 00:03:21</h3>
