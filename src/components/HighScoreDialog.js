@@ -5,8 +5,13 @@ import styles from './HighScoreDialog.module.scss';
 function HighScoreDialog() {
   return (
     <div className={styles.root}>
-      <h1>High Scores</h1>
-      <Button>Submit</Button>
+      <form>
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your Name" autoFocus />
+        </label>
+        <Button type="submit">Submit</Button>
+      </form>
     </div>
   );
 }
