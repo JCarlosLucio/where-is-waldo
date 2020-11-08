@@ -33,6 +33,7 @@ function HighScoreDialog() {
             name="name"
             value={name}
             onChange={handleChange}
+            maxLength="3"
             placeholder="Your Name"
             autoFocus
             required
