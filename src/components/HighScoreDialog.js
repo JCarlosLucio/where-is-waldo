@@ -13,7 +13,7 @@ function HighScoreDialog() {
           <li>Name 00:02:12</li>
         </ol>
       </div>
-      <form>
+      <form className={styles.form}>
         <h3>Your Time: 00:03:21</h3>
         <label>
           Name
