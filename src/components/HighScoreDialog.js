@@ -1,9 +1,10 @@
 import React from 'react';
 import useInput from '../hooks/useInput';
 import Button from './Button';
+import { formatTime } from '../utils/index';
 import styles from './HighScoreDialog.module.scss';
 
-function HighScoreDialog() {
+function HighScoreDialog({ timer }) {
   const [name, handleChange] = useInput('');
 
   return (
@@ -25,7 +26,7 @@ function HighScoreDialog() {
       </div>
       <form className={styles.form}>
         <h2>Add Your Score</h2>
-        <h3>Your Time: 00:03:21</h3>
+        <h3>Your Time: {formatTime(timer)}</h3>
         <label htmlFor="name">Name</label>
         <input
           className={styles.name}
