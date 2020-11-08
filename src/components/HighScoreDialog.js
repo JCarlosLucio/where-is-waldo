@@ -7,7 +7,7 @@ function HighScoreDialog() {
     <div className={styles.root}>
       <div className={styles.highscores}>
         <h1>High Scores</h1>
-        <ol>
+        <ol className={styles.scores}>
           <li>Name 00:02:10</li>
           <li>Name 00:02:11</li>
           <li>Name 00:02:12</li>
