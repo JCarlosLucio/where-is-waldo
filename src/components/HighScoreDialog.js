@@ -20,6 +20,7 @@ function HighScoreDialog() {
         </ul>
       </div>
       <form>
+        <h3>Your Time: 00:03:21</h3>
         <label>
           Name
           <input type="text" name="name" placeholder="Your Name" autoFocus />
