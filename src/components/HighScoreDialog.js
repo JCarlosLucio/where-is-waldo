@@ -21,6 +21,7 @@ function HighScoreDialog() {
         </ol>
       </div>
       <form className={styles.form}>
+        <h2>Add Your Score</h2>
         <h3>Your Time: 00:03:21</h3>
         <label>
           Name
