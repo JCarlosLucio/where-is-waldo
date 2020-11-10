@@ -67,7 +67,7 @@ function App() {
       {modalOpen && (
         <Modal>
           {stageModal === 'highscore' ? (
-            <HighScoreDialog timer={timer} />
+            <HighScoreDialog imageId={gameImage.id} timer={timer} />
           ) : (
             <Carousel imageList={seedImageList} handleStart={handleStart} />
           )}
