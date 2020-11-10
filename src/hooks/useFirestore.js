@@ -8,7 +8,7 @@ function useFirestore(collection) {
     () => {
       const query = firestore
         .collection(collection)
-        .orderBy('time', 'desc')
+        .orderBy('time', 'asc')
         .limit(10);
 
       const unsub = query.onSnapshot((snap) => {
