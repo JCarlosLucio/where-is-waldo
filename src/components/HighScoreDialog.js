@@ -8,7 +8,7 @@ import styles from './HighScoreDialog.module.scss';
 
 function HighScoreDialog({ imageId, timer }) {
   const [name, handleChange] = useInput('');
-  const [scores] = useFirestore('scores');
+  const [scores] = useFirestore(`${imageId}-scores`);
   const scoresRef = firestore.collection(`${imageId}-scores`);
 
   const addScore = async (e) => {
