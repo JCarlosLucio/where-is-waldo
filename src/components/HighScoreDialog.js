@@ -1,13 +1,24 @@
 import React from 'react';
+import { firestore } from '../firebase/config';
 import useFirestore from '../hooks/useFirestore';
 import useInput from '../hooks/useInput';
 import Button from './Button';
 import { formatTime } from '../utils/index';
 import styles from './HighScoreDialog.module.scss';
 
-function HighScoreDialog({ timer }) {
+function HighScoreDialog({ imageId, timer }) {
   const [name, handleChange] = useInput('');
   const [scores] = useFirestore('scores');
+  const scoresRef = firestore.collection(`${imageId}-scores`);
+
+  const addScore = async (e) => {
+    e.preventDefault();
+    // add to Firestore collection
+    await scoresRef.add({
+      name,
+      time: timer,
+    });
+  };
 
   // use scores from firestore
   const scoresList = scores.map((score) => (
@@ -23,7 +34,7 @@ function HighScoreDialog({ timer }) {
 
         <ol className={styles.scores}>{scoresList}</ol>
       </div>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={addScore}>
         <h2>Add Your Score</h2>
         <h3>Your Time: {formatTime(timer)}</h3>
         <label htmlFor="name">Name</label>
