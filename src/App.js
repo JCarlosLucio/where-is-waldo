@@ -13,7 +13,7 @@ function App() {
   // image for game w/ list of items to find
   const [gameImage, setGameImage] = useState(seedImageList[0]);
   // timer for how long it takes to find items
-  const [timer, start, stop] = useTimer(0);
+  const [timer, start, stop, reset] = useTimer(0);
   // state for opening Modal
   const [modalOpen, toggleModalOpen] = useToggle(true);
   // state for showing Carousel or HighScores
@@ -37,6 +37,15 @@ function App() {
     setGameImage(image);
     toggleModalOpen();
     start();
+  };
+
+  const handleRestart = (e) => {
+    // reset image found states
+    setGameImage(seedImageList[0]);
+    // resets timer to 0
+    reset();
+    setStageModal('start');
+    console.log('RESTARTED');
   };
 
   const toggleFound = (itemId) => {
@@ -67,7 +76,11 @@ function App() {
       {modalOpen && (
         <Modal>
           {stageModal === 'highscore' ? (
-            <HighScoreDialog imageId={gameImage.id} timer={timer} />
+            <HighScoreDialog
+              imageId={gameImage.id}
+              timer={timer}
+              handleRestart={handleRestart}
+            />
           ) : (
             <Carousel imageList={seedImageList} handleStart={handleStart} />
           )}
