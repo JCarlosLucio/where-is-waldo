@@ -7,7 +7,7 @@ import Button from './Button';
 import { formatTime } from '../utils/index';
 import styles from './HighScoreDialog.module.scss';
 
-function HighScoreDialog({ imageId, timer }) {
+function HighScoreDialog({ imageId, timer, handleRestart }) {
   const [showForm, toggleShowForm] = useToggle(true);
   const [name, handleChange] = useInput('');
   const [scores] = useFirestore(`${imageId}-scores`);
@@ -61,7 +61,7 @@ function HighScoreDialog({ imageId, timer }) {
         <div>
           <h1>{name} Time:</h1>
           <h2>{formatTime(timer)}</h2>
-          <Button>Restart</Button>
+          <button onClick={handleRestart}>Restart</button>
         </div>
       )}
     </div>
