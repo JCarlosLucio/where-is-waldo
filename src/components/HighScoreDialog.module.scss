@@ -41,6 +41,16 @@
   overflow: hidden;
 }
 
+.restart {
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+  justify-content: space-evenly;
+  // background-color: green;
+  height: 10rem;
+  font-size: 0.9rem;
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .root {
@@ -58,5 +68,8 @@
   }
   .name {
     font-size: 2rem;
+  }
+  .restart {
+    height: 10rem;
   }
 }

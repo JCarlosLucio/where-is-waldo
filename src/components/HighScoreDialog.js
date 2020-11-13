@@ -58,8 +58,8 @@ function HighScoreDialog({ imageId, timer, handleRestart }) {
           <Button type="submit">Submit</Button>
         </form>
       ) : (
-        <div>
-          <h1>{name.toUpperCase()} Time:</h1>
+        <div className={styles.restart}>
+          <h1>{name.toUpperCase()} Time</h1>
           <h2>{formatTime(timer)}</h2>
           <Button handleClick={handleRestart}>Restart</Button>
         </div>
