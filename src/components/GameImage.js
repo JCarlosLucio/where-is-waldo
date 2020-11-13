@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { FaGithubSquare } from 'react-icons/fa';
 import useToggle from '../hooks/useToggle';
 import useSnackbar from '../hooks/useSnackbar';
 import ContextMenu from './ContextMenu';
@@ -87,7 +88,9 @@ function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
       <img className={styles.image} src={imageUrl} alt={imageName} />
       <MadeBy position="left">
         by Lucio
-        <a href="https://github.com/JCarlosLucio/where-is-waldo">Github Icon</a>
+        <a href="https://github.com/JCarlosLucio/where-is-waldo">
+          <FaGithubSquare />
+        </a>
       </MadeBy>
       <MadeBy position="right">Image by {imageAuthor}</MadeBy>
     </div>
