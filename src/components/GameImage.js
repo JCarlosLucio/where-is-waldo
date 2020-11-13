@@ -85,7 +85,7 @@ function GameImage({ list, imageUrl, imageName, toggleFound }) {
         />
       )}
       <img className={styles.image} src={imageUrl} alt={imageName} />
-      <MadeBy>
+      <MadeBy position="left">
         by Lucio
         <a href="https://github.com/JCarlosLucio/where-is-waldo">Github Icon</a>
       </MadeBy>
