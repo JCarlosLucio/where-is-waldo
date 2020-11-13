@@ -1,10 +1,15 @@
 .root {
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   width: fit-content;
   height: fit-content;
-  margin: 1rem;
+  padding: 1rem;
   background-color: white;
-  border-radius: 1rem;
+  border-radius: 0.6rem;
   z-index: 5;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 1;
+  }
 }
