@@ -4,6 +4,7 @@ import useSnackbar from '../hooks/useSnackbar';
 import ContextMenu from './ContextMenu';
 import CustomCursor from './CustomCursor';
 import Snackbar from './Snackbar';
+import MadeBy from './MadeBy';
 import styles from './GameImage.module.scss';
 
 function GameImage({ list, imageUrl, imageName, toggleFound }) {
@@ -84,6 +85,10 @@ function GameImage({ list, imageUrl, imageName, toggleFound }) {
         />
       )}
       <img className={styles.image} src={imageUrl} alt={imageName} />
+      <MadeBy>
+        by Lucio
+        <a href="https://github.com/JCarlosLucio/where-is-waldo">Github Icon</a>
+      </MadeBy>
     </div>
   );
 }
