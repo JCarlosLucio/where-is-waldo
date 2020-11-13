@@ -7,7 +7,7 @@ import Snackbar from './Snackbar';
 import MadeBy from './MadeBy';
 import styles from './GameImage.module.scss';
 
-function GameImage({ list, imageUrl, imageName, toggleFound }) {
+function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
   const [cursorCoords, setCursorCoords] = useState({ x: 0, y: 0 });
@@ -89,6 +89,7 @@ function GameImage({ list, imageUrl, imageName, toggleFound }) {
         by Lucio
         <a href="https://github.com/JCarlosLucio/where-is-waldo">Github Icon</a>
       </MadeBy>
+      <MadeBy position="right">Image by {imageAuthor}</MadeBy>
     </div>
   );
 }
