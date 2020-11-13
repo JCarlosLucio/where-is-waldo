@@ -45,6 +45,7 @@ function App() {
     // resets timer to 0
     reset();
     setStageModal('start');
+    if (!modalOpen) toggleModalOpen();
     console.log('RESTARTED');
   };
 
