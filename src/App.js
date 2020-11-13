@@ -70,6 +70,7 @@ function App() {
         list={gameImage.itemList}
         imageUrl={gameImage.imageUrl}
         imageName={gameImage.imageName}
+        imageAuthor={gameImage.imageAuthor}
         toggleFound={toggleFound}
       />
       {/* modal for starting game/timer */}
