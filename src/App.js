@@ -65,7 +65,11 @@ function App() {
 
   return (
     <div className={styles.root}>
-      <Navbar list={gameImage.itemList} timer={timer} />
+      <Navbar
+        list={gameImage.itemList}
+        timer={timer}
+        handleRestart={handleRestart}
+      />
       <GameImage
         list={gameImage.itemList}
         imageUrl={gameImage.imageUrl}
