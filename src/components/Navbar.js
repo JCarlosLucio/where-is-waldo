@@ -13,7 +13,7 @@ function Navbar({ list, timer, handleRestart }) {
   return (
     <nav className={styles.root}>
       <ul className={styles.nav}>
-        <li onClick={handleRestart}>
+        <li className={styles.logo} onClick={handleRestart}>
           <Logo primary="white" secondary="red" />
         </li>
         <li className={styles.timer}>{formatTime(timer)}</li>

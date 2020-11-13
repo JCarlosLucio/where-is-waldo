@@ -20,6 +20,15 @@
   justify-content: space-around;
 }
 
+.logo {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
 .timer {
   font-size: 2rem;
   font-weight: bold;
