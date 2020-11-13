@@ -1,9 +1,10 @@
 .root {
   position: fixed;
+  font-size: 0.7rem;
   bottom: 1rem;
   width: fit-content;
   height: fit-content;
-  padding: 1rem;
+  padding: 0.2rem 0.5rem;
   background-color: white;
   border-radius: 0.6rem;
   z-index: 5;
@@ -24,4 +25,12 @@
 
 .icon {
   font-size: 1.5rem;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .root {
+    font-size: 1rem;
+    padding: 1rem;
+  }
 }
