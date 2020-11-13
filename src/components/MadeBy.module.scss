@@ -23,8 +23,9 @@
   right: 1rem;
 }
 
-.icon {
-  font-size: 1.5rem;
+.author {
+  font-size: 0.7rem;
+  text-decoration: none;
 }
 
 // Medium devices (tablets, 768px and up)
@@ -32,5 +33,9 @@
   .root {
     font-size: 1rem;
     padding: 1rem;
+  }
+  .author {
+    font-size: 1.1rem;
+    text-decoration: none;
   }
 }
