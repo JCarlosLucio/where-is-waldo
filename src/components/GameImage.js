@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import useToggle from '../hooks/useToggle';
 import useSnackbar from '../hooks/useSnackbar';
 import ContextMenu from './ContextMenu';
-import CustomCursor from './CustomCursor';
 import Snackbar from './Snackbar';
 import MadeBy from './MadeBy';
 import styles from './GameImage.module.scss';
@@ -10,7 +9,7 @@ import styles from './GameImage.module.scss';
 function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
-  const [cursorCoords, setCursorCoords] = useState({ x: 0, y: 0 });
+
   const [
     textSnackbar,
     bgSnackbar,
@@ -26,11 +25,6 @@ function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
     const { pageX: x, pageY: y } = event;
     setMenuCoords({ x, y });
     toggleMenuOpen();
-  };
-
-  const handleMouseMove = (event) => {
-    const { pageX: x, pageY: y } = event;
-    setCursorCoords({ x, y });
   };
 
   const handleMenuClick = (itemName, itemId, relX0, relY0, x, y) => {
@@ -68,14 +62,8 @@ function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
   };
 
   return (
-    <div
-      className={styles.root}
-      onMouseMove={handleMouseMove}
-      onClick={handleImageClick}
-      ref={imgRef}
-    >
+    <div className={styles.root} onClick={handleImageClick} ref={imgRef}>
       {openSnackbar && <Snackbar bg={bgSnackbar}>{textSnackbar}</Snackbar>}
-      <CustomCursor xPos={cursorCoords.x} yPos={cursorCoords.y} />
       {menuOpen && (
         <ContextMenu
           list={list}
