@@ -7,3 +7,10 @@
   max-width: 100%;
   height: auto;
 }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .root {
+    cursor: url('../assets/custom-cursor.svg') 50 50, auto;
+  }
+}
