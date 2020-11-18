@@ -12,9 +12,11 @@ function useFirestore(collection) {
         .limit(10);
 
       const unsub = query.onSnapshot((snap) => {
-        let documents = [];
-        snap.forEach((doc) => {
-          documents.push({ ...doc.data(), id: doc.id });
+        const documents = snap.docs.map((doc) => {
+          return {
+            id: doc.id,
+            ...doc.data(),
+          };
         });
         console.log('getting docs', documents);
         setDocs(documents);
