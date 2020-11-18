@@ -1,17 +1,15 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
-const API_KEY = process.env.REACT_APP_FIREBASE_KEY;
-
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: API_KEY,
-  authDomain: 'where-is-waldo-a70d9.firebaseapp.com',
-  databaseURL: 'https://where-is-waldo-a70d9.firebaseio.com',
-  projectId: 'where-is-waldo-a70d9',
-  storageBucket: 'where-is-waldo-a70d9.appspot.com',
-  messagingSenderId: '7035074159',
-  appId: '1:7035074159:web:8e9fecfb3925bfc042ff9a',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
