@@ -5,6 +5,7 @@ import ContextMenu from './ContextMenu';
 import Snackbar from './Snackbar';
 import MadeBy from './MadeBy';
 import styles from './GameImage.module.scss';
+import { firestore } from '../firebase/config';
 
 function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
@@ -27,38 +28,51 @@ function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
     toggleMenuOpen();
   };
 
-  const handleMenuClick = (itemName, itemId, relX0, relY0, x, y) => {
-    // x / y coords are taken from complete page (take navbar into account)
-    // width / height reference GameImage (don't take navbar into account)
-    const width = imgRef.current.offsetWidth;
-    const height = imgRef.current.offsetHeight;
+  const handleMenuClick = async (itemName, itemId, x, y) => {
+    try {
+      // x / y coords are taken from complete page (take navbar into account)
+      // width / height reference GameImage (don't take navbar into account)
+      const width = imgRef.current.offsetWidth;
+      const height = imgRef.current.offsetHeight;
+      let coords;
+      await firestore.collection('coords').doc(itemId).get().then((doc) => {
+        if (doc) {
+          console.log('Coords Doc', doc.data());
+          coords = doc.data();
+        } else {
+          console.log('No such document!');
+        }
+      });
 
-    // use relative form so it can work on any screen size
-    const relX = x / width;
-    const relY = (y - 60) / height; // 60 is height of navbar
-    const testX = Math.abs(relX - relX0) < 0.042; // 0.042  max relative deltaX
-    const testY = Math.abs(relY - relY0) < 0.01; // 0.01  max relative deltaY
-    if (testX && testY) {
-      setTextSnackbar(`You have found ${itemName}!`);
-      setBgSnackbar('green');
-      toggleSnackbar();
-      toggleFound(itemId);
-    } else {
-      setTextSnackbar('Keep looking!');
-      setBgSnackbar('red');
-      toggleSnackbar();
+      // use relative form so it can work on any screen size
+      const relX = x / width;
+      const relY = (y - 60) / height; // 60 is height of navbar
+      const testX = Math.abs(relX - coords.relX0) < 0.042; // 0.042  max relative deltaX
+      const testY = Math.abs(relY - coords.relY0) < 0.01; // 0.01  max relative deltaY
+      if (testX && testY) {
+        setTextSnackbar(`You have found ${itemName}!`);
+        setBgSnackbar('green');
+        toggleSnackbar();
+        toggleFound(itemId);
+      } else {
+        setTextSnackbar('Keep looking!');
+        setBgSnackbar('red');
+        toggleSnackbar();
+      }
+      console.log(
+        { itemId },
+        { relX0: coords.relX0 },
+        { relY0: coords.relY0 },
+        { relX },
+        { relY },
+        { testX },
+        { testY }
+      );
+
+      toggleMenuOpen();
+    } catch (error) {
+      console.error(error);
     }
-    console.log(
-      { itemId },
-      { relX0 },
-      { relY0 },
-      { relX },
-      { relY },
-      { testX },
-      { testY }
-    );
-
-    toggleMenuOpen();
   };
 
   return (
