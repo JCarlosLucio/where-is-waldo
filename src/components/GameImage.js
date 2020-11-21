@@ -1,24 +1,20 @@
 import React, { useState, useRef } from 'react';
+import { firestore } from '../firebase/config';
 import useToggle from '../hooks/useToggle';
 import useSnackbar from '../hooks/useSnackbar';
 import ContextMenu from './ContextMenu';
 import Snackbar from './Snackbar';
 import MadeBy from './MadeBy';
 import styles from './GameImage.module.scss';
-import { firestore } from '../firebase/config';
 
 function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
+  const [snackbar, openSnackbar, setSnackbar, toggleSnackbar] = useSnackbar(
+    { text: '', bg: 'red' },
+    3000
+  );
 
-  const [
-    textSnackbar,
-    bgSnackbar,
-    openSnackbar,
-    setTextSnackbar,
-    setBgSnackbar,
-    toggleSnackbar,
-  ] = useSnackbar('', 'gray', 3000);
   const imgRef = useRef();
 
   const handleImageClick = (event) => {
@@ -49,16 +45,20 @@ function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
           console.log('No such character coords!');
         }
       });
-      const testX = Math.abs(relX - coords.relX0) < 0.042; // 0.042  max relative distance from relX0 (origin)
-      const testY = Math.abs(relY - coords.relY0) < 0.01; // 0.01  max relative distance from relY0 (origin)
+
+      // Test max relative distance from origin(X0,Y0) deltaX=0.042 / deltaY=0.01
+      const testX = Math.abs(relX - coords.relX0) < 0.042;
+      const testY = Math.abs(relY - coords.relY0) < 0.01;
+
       if (testX && testY) {
-        setTextSnackbar(`You have found ${itemName}!`);
-        setBgSnackbar('green');
+        setSnackbar({
+          text: `You found ${itemName}!`,
+          bg: 'green',
+        });
         toggleSnackbar();
         toggleFound(itemId);
       } else {
-        setTextSnackbar('Keep looking!');
-        setBgSnackbar('red');
+        setSnackbar({ text: `Keep Looking!`, bg: 'red' });
         toggleSnackbar();
       }
       console.log(
@@ -79,7 +79,7 @@ function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
 
   return (
     <div className={styles.root} onClick={handleImageClick} ref={imgRef}>
-      {openSnackbar && <Snackbar bg={bgSnackbar}>{textSnackbar}</Snackbar>}
+      {openSnackbar && <Snackbar bg={snackbar.bg}>{snackbar.text}</Snackbar>}
       {menuOpen && (
         <ContextMenu
           list={list}
