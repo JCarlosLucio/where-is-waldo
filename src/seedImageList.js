@@ -30,8 +30,6 @@ const imageList = [
         image: bowser,
         difficulty: 'easy',
         found: false,
-        relX0: 0.84,
-        relY0: 0.41,
       },
       // Medium
       {
@@ -41,8 +39,6 @@ const imageList = [
         image: yubaba,
         difficulty: 'medium',
         found: false,
-        relX0: 0.52,
-        relY0: 0.058,
       },
       // Hard
       {
@@ -52,8 +48,6 @@ const imageList = [
         image: theKnight,
         difficulty: 'hard',
         found: false,
-        relX0: 0.6,
-        relY0: 0.92,
       },
     ],
   },
@@ -77,8 +71,6 @@ const imageList = [
         image: cacodemon,
         difficulty: 'easy',
         found: false,
-        relX0: 0.52,
-        relY0: 0.245,
       },
       // Medium
       {
@@ -88,8 +80,6 @@ const imageList = [
         image: billCipher,
         difficulty: 'medium',
         found: false,
-        relX0: 0.71,
-        relY0: 0.65,
       },
       // Hard
       {
@@ -99,8 +89,6 @@ const imageList = [
         image: courage,
         difficulty: 'hard',
         found: false,
-        relX0: 0.315,
-        relY0: 0.519,
       },
     ],
   },
