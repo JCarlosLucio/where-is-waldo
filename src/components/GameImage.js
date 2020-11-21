@@ -34,21 +34,23 @@ function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
       // width / height reference GameImage (don't take navbar into account)
       const width = imgRef.current.offsetWidth;
       const height = imgRef.current.offsetHeight;
-      let coords;
-      await firestore.collection('coords').doc(itemId).get().then((doc) => {
-        if (doc) {
-          console.log('Coords Doc', doc.data());
-          coords = doc.data();
-        } else {
-          console.log('No such document!');
-        }
-      });
 
       // use relative form so it can work on any screen size
       const relX = x / width;
       const relY = (y - 60) / height; // 60 is height of navbar
-      const testX = Math.abs(relX - coords.relX0) < 0.042; // 0.042  max relative deltaX
-      const testY = Math.abs(relY - coords.relY0) < 0.01; // 0.01  max relative deltaY
+
+      // Get relative Coords from Firestore
+      const coordsRef = firestore.collection('coords').doc(itemId);
+      const coords = await coordsRef.get().then((doc) => {
+        if (doc) {
+          console.log('Getting character coords');
+          return doc.data();
+        } else {
+          console.log('No such character coords!');
+        }
+      });
+      const testX = Math.abs(relX - coords.relX0) < 0.042; // 0.042  max relative distance from relX0 (origin)
+      const testY = Math.abs(relY - coords.relY0) < 0.01; // 0.01  max relative distance from relY0 (origin)
       if (testX && testY) {
         setTextSnackbar(`You have found ${itemName}!`);
         setBgSnackbar('green');
@@ -71,7 +73,7 @@ function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
 
       toggleMenuOpen();
     } catch (error) {
-      console.error(error);
+      console.error('A wild Error appeared!', error);
     }
   };
 
