@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import useTimedToggle from './useTimedToggle';
 
-function useSnackbar(initialText, initialBg, interval) {
+function useSnackbar(initialContent, interval) {
+  const [content, setContent] = useState(initialContent);
   const [open, toggle] = useTimedToggle(interval);
-  const [text, setText] = useState(initialText);
-  const [bg, setBg] = useState(initialBg);
 
-  return [text, bg, open, setText, setBg, toggle];
+  return [content, open, setContent, toggle];
 }
 
 export default useSnackbar;
