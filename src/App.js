@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import useTimer from './hooks/useTimer';
 import useToggle from './hooks/useToggle';
 import Navbar from './components/Navbar';
