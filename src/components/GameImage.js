@@ -7,7 +7,14 @@ import Snackbar from './Snackbar';
 import MadeBy from './MadeBy';
 import styles from './GameImage.module.scss';
 
-function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
+function GameImage({
+  list,
+  imageUrl,
+  imageName,
+  imageAuthor,
+  toggleFound,
+  handleWin,
+}) {
   const [menuOpen, toggleMenuOpen] = useToggle(false);
   const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
   const [snackbar, openSnackbar, setSnackbar, toggleSnackbar] = useSnackbar(
@@ -86,6 +93,7 @@ function GameImage({ list, imageUrl, imageName, imageAuthor, toggleFound }) {
           xPos={menuCoords.x}
           yPos={menuCoords.y}
           handleMenuClick={handleMenuClick}
+          handleWin={handleWin}
         />
       )}
       <img className={styles.image} src={imageUrl} alt={imageName} />
