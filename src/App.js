@@ -19,24 +19,19 @@ function App() {
   // state for showing Carousel or HighScores
   const [stageModal, setStageModal] = useState('start');
 
-  useEffect(
-    () => {
-      const win = gameImage.itemList.every((item) => item.found);
-      if (win && modalOpen === false) {
-        console.log('YOU WIN');
-        console.log(timer);
-        stop();
-        setStageModal('highscore');
-        toggleModalOpen();
-      }
-    },
-    [gameImage, timer, stop, setStageModal, modalOpen, toggleModalOpen]
-  );
-
   const handleStart = (image) => {
     setGameImage(image);
     toggleModalOpen();
     start();
+  };
+
+  const handleWin = () => {
+    if (!modalOpen) {
+      console.log('YOU WIN');
+      stop();
+      setStageModal('highscore');
+      toggleModalOpen();
+    }
   };
 
   const handleRestart = (e) => {
@@ -77,6 +72,7 @@ function App() {
         imageName={gameImage.imageName}
         imageAuthor={gameImage.imageAuthor}
         toggleFound={toggleFound}
+        handleWin={handleWin}
       />
       {/* modal for starting game/timer */}
       {modalOpen && (
