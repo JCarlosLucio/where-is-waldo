@@ -68,16 +68,7 @@ function GameImage({
         setSnackbar({ text: `Keep Looking!`, bg: 'red' });
         toggleSnackbar();
       }
-      console.log(
-        { itemId },
-        { relX0: coords.relX0 },
-        { relY0: coords.relY0 },
-        { relX },
-        { relY },
-        { testX },
-        { testY }
-      );
-
+      // close ContextMenu
       toggleMenuOpen();
     } catch (error) {
       console.error('A wild Error appeared!', error);
