@@ -7,18 +7,20 @@ import Button from './Button';
 import { formatTime } from '../utils/index';
 import styles from './HighScoreDialog.module.scss';
 
-function HighScoreDialog({ imageId, timer, handleRestart }) {
+function HighScoreDialog({ imageId, time, handleRestart }) {
   const [showForm, toggleShowForm] = useToggle(true);
   const [name, handleChange] = useInput('');
   const [scores] = useFirestore(`${imageId}-scores`);
   const scoresRef = firestore.collection(`${imageId}-scores`);
+  const timeElapsed = (time.end - time.start) / 1000;
 
   const addScore = async (e) => {
     e.preventDefault();
+    // In seconds and miliseconds as decimals (ex. 17.248)
     // add to Firestore collection
     await scoresRef.add({
       name,
-      time: timer,
+      time: timeElapsed,
     });
     // hide Form
     toggleShowForm();
@@ -41,7 +43,7 @@ function HighScoreDialog({ imageId, timer, handleRestart }) {
       {showForm ? (
         <form className={styles.form} onSubmit={addScore}>
           <h2>Add Your Score</h2>
-          <h3>Your Time: {formatTime(timer)}</h3>
+          <h3>Your Time: {formatTime(timeElapsed)}</h3>
           <label htmlFor="name">Name</label>
           <input
             className={styles.name}
@@ -60,7 +62,7 @@ function HighScoreDialog({ imageId, timer, handleRestart }) {
       ) : (
         <div className={styles.restart}>
           <h1>{name.toUpperCase()} Time</h1>
-          <h2>{formatTime(timer)}</h2>
+          <h2>{formatTime(timeElapsed)}</h2>
           <Button handleClick={handleRestart}>Restart</Button>
         </div>
       )}
