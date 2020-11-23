@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import useTimer from './hooks/useTimer';
 import useToggle from './hooks/useToggle';
 import Navbar from './components/Navbar';
 import GameImage from './components/GameImage';
@@ -12,8 +11,6 @@ import styles from './App.module.scss';
 function App() {
   // image for game w/ list of items to find
   const [gameImage, setGameImage] = useState(seedImageList[0]);
-  // timer for how long it takes to find items
-  // const [timer, start, stop, reset] = useTimer(0);
   // state for opening Modal
   const [modalOpen, toggleModalOpen] = useToggle(true);
   // state for showing Carousel or HighScores
@@ -28,7 +25,6 @@ function App() {
     setIsGameOver(false);
     setTime({ ...time, start: Date.now() });
     toggleModalOpen();
-    // start();
   };
 
   const handleWin = () => {
@@ -36,7 +32,6 @@ function App() {
       console.log('YOU WIN');
       setIsGameOver(true);
       setTime({ ...time, end: Date.now() });
-      // stop();
       setStageModal('highscore');
       toggleModalOpen();
     }
@@ -45,8 +40,7 @@ function App() {
   const handleRestart = (e) => {
     // reset image found states
     setGameImage(seedImageList[0]);
-    // resets timer to 0
-    // reset();
+    // resets time to 0
     setTime({ start: 0, end: 0 });
     setStageModal('start');
     if (!modalOpen) toggleModalOpen();
@@ -72,7 +66,6 @@ function App() {
     <div className={styles.root}>
       <Navbar
         list={gameImage.itemList}
-        // timer={timer}
         isGameOver={isGameOver}
         handleRestart={handleRestart}
       />
