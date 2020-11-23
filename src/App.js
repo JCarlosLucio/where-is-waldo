@@ -85,7 +85,7 @@ function App() {
           {stageModal === 'highscore' ? (
             <HighScoreDialog
               imageId={gameImage.id}
-              timer={timer}
+              time={time}
               handleRestart={handleRestart}
             />
           ) : (
