@@ -31,6 +31,7 @@ function App() {
   const handleWin = () => {
     if (!modalOpen) {
       console.log('YOU WIN');
+      setTime({ ...time, end: Date.now() });
       stop();
       setStageModal('highscore');
       toggleModalOpen();
