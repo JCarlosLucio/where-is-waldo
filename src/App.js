@@ -73,6 +73,7 @@ function App() {
       <Navbar
         list={gameImage.itemList}
         // timer={timer}
+        isGameOver={isGameOver}
         handleRestart={handleRestart}
       />
       <GameImage
