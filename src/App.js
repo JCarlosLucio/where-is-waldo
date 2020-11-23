@@ -34,6 +34,7 @@ function App() {
   const handleWin = () => {
     if (!modalOpen) {
       console.log('YOU WIN');
+      setIsGameOver(true);
       setTime({ ...time, end: Date.now() });
       // stop();
       setStageModal('highscore');
