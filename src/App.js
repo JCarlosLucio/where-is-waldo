@@ -18,6 +18,8 @@ function App() {
   const [modalOpen, toggleModalOpen] = useToggle(true);
   // state for showing Carousel or HighScores
   const [stageModal, setStageModal] = useState('start');
+  // time start/end for timeElapsed
+  const [time, setTime] = useState({ start: 0, end: 0 });
 
   const handleStart = (image) => {
     setGameImage(image);
