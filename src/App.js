@@ -23,6 +23,7 @@ function App() {
 
   const handleStart = (image) => {
     setGameImage(image);
+    setTime({ ...time, start: Date.now() });
     toggleModalOpen();
     start();
   };
