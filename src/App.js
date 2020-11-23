@@ -43,6 +43,7 @@ function App() {
     setGameImage(seedImageList[0]);
     // resets timer to 0
     reset();
+    setTime({ start: 0, end: 0 });
     setStageModal('start');
     if (!modalOpen) toggleModalOpen();
     console.log('RESTARTED');
