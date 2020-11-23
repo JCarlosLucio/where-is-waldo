@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useTimer from './hooks/useTimer';
+// import useTimer from './hooks/useTimer';
 import useToggle from './hooks/useToggle';
 import Navbar from './components/Navbar';
 import GameImage from './components/GameImage';
@@ -13,26 +13,28 @@ function App() {
   // image for game w/ list of items to find
   const [gameImage, setGameImage] = useState(seedImageList[0]);
   // timer for how long it takes to find items
-  const [timer, start, stop, reset] = useTimer(0);
+  // const [timer, start, stop, reset] = useTimer(0);
   // state for opening Modal
   const [modalOpen, toggleModalOpen] = useToggle(true);
   // state for showing Carousel or HighScores
   const [stageModal, setStageModal] = useState('start');
   // time start/end for timeElapsed
   const [time, setTime] = useState({ start: 0, end: 0 });
+  // isGameOver state to handle start/reset in Timer component
+  const [isGameOver, setIsGameOver] = useState(true);
 
   const handleStart = (image) => {
     setGameImage(image);
     setTime({ ...time, start: Date.now() });
     toggleModalOpen();
-    start();
+    // start();
   };
 
   const handleWin = () => {
     if (!modalOpen) {
       console.log('YOU WIN');
       setTime({ ...time, end: Date.now() });
-      stop();
+      // stop();
       setStageModal('highscore');
       toggleModalOpen();
     }
@@ -42,7 +44,7 @@ function App() {
     // reset image found states
     setGameImage(seedImageList[0]);
     // resets timer to 0
-    reset();
+    // reset();
     setTime({ start: 0, end: 0 });
     setStageModal('start');
     if (!modalOpen) toggleModalOpen();
@@ -68,7 +70,7 @@ function App() {
     <div className={styles.root}>
       <Navbar
         list={gameImage.itemList}
-        timer={timer}
+        // timer={timer}
         handleRestart={handleRestart}
       />
       <GameImage
