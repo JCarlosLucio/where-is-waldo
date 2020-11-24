@@ -1,5 +1,5 @@
 import React from 'react';
-import { firestore } from '../firebase/config';
+import { firestore, timestamp } from '../firebase/config';
 import useFirestore from '../hooks/useFirestore';
 import useToggle from '../hooks/useToggle';
 import useInput from '../hooks/useInput';
@@ -21,6 +21,7 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
     await scoresRef.add({
       name,
       time: timeElapsed,
+      createdAt: timestamp,
     });
     // hide Form
     toggleShowForm();
