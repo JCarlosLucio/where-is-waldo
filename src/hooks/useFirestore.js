@@ -18,7 +18,7 @@ function useFirestore(collection) {
             ...doc.data(),
           };
         });
-        console.log('getting docs', documents);
+        console.log(`Getting ${collection}`);
         setDocs(documents);
       });
       return () => unsub();
