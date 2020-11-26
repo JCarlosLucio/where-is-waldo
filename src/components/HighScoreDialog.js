@@ -19,6 +19,8 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
       e.preventDefault();
       // In seconds and miliseconds as decimals (ex. 17.248)
       // add to Firestore collection
+      // Rules for collection:
+      // Only accepts 3 props(name,time,createdAt) w/ the appropiate types
       await scoresRef.add({
         name,
         time: timeElapsed,
