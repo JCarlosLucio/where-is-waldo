@@ -38,6 +38,8 @@ function App() {
   };
 
   const handleRestart = (e) => {
+    // reset Timer component
+    setIsGameOver(true);
     // reset image found states
     setGameImage(seedImageList[0]);
     // resets time to 0
