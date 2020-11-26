@@ -15,16 +15,20 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
   const timeElapsed = (time.end - time.start) / 1000;
 
   const addScore = async (e) => {
-    e.preventDefault();
-    // In seconds and miliseconds as decimals (ex. 17.248)
-    // add to Firestore collection
-    await scoresRef.add({
-      name,
-      time: timeElapsed,
-      createdAt: timestamp,
-    });
-    // hide Form
-    toggleShowForm();
+    try {
+      e.preventDefault();
+      // In seconds and miliseconds as decimals (ex. 17.248)
+      // add to Firestore collection
+      await scoresRef.add({
+        name,
+        time: timeElapsed,
+        createdAt: timestamp,
+      });
+      // hide Form
+      toggleShowForm();
+    } catch (error) {
+      console.error('A wild error appeared!', error);
+    }
   };
 
   // use scores from firestore
