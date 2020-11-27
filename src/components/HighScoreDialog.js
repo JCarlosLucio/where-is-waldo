@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { firestore, timestamp } from '../firebase/config';
 import useFirestore from '../hooks/useFirestore';
 import useInput from '../hooks/useInput';
@@ -13,6 +13,20 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
   const [scores] = useFirestore(`${imageId}-scores`);
   const scoresRef = firestore.collection(`${imageId}-scores`);
   const timeElapsed = (time.end - time.start) / 1000;
+
+  // check if isHighScore to showForm for adding to firestore
+  useEffect(
+    () => {
+      if (scores.length > 0 && !hasAddedHighScore) {
+        const maxScore = Math.max(...scores.map((score) => score.time));
+        const isHighScore = scores.length < 10 ? true : timeElapsed < maxScore;
+        if (isHighScore) {
+          setShowForm(true);
+        }
+      }
+    },
+    [scores, timeElapsed, hasAddedHighScore, setShowForm]
+  );
 
   const addScore = async (e) => {
     try {
@@ -46,7 +60,6 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
     <div className={styles.root}>
       <div className={styles.highscores}>
         <h1>High Scores</h1>
-
         <ol className={styles.scores}>{scoresList}</ol>
       </div>
       {showForm ? (
