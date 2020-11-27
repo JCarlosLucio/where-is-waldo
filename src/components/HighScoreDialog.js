@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { firestore, timestamp } from '../firebase/config';
 import useFirestore from '../hooks/useFirestore';
-import useToggle from '../hooks/useToggle';
 import useInput from '../hooks/useInput';
 import Button from './Button';
 import { formatTime } from '../utils/index';
 import styles from './HighScoreDialog.module.scss';
 
 function HighScoreDialog({ imageId, time, handleRestart }) {
-  const [showForm, toggleShowForm] = useToggle(true);
+  const [showForm, setShowForm] = useState(false);
   const [name, handleChange] = useInput('');
   const [scores] = useFirestore(`${imageId}-scores`);
   const scoresRef = firestore.collection(`${imageId}-scores`);
@@ -27,7 +26,7 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
         createdAt: timestamp,
       });
       // hide Form
-      toggleShowForm();
+      setShowForm(false);
     } catch (error) {
       console.error('A wild error appeared!', error);
     }
