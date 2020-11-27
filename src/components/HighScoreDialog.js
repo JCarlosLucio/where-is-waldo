@@ -9,6 +9,7 @@ import styles from './HighScoreDialog.module.scss';
 function HighScoreDialog({ imageId, time, handleRestart }) {
   const [showForm, setShowForm] = useState(false);
   const [name, handleChange] = useInput('');
+  const [hasAddedHighScore, setHasAddedHighScore] = useState(false);
   const [scores] = useFirestore(`${imageId}-scores`);
   const scoresRef = firestore.collection(`${imageId}-scores`);
   const timeElapsed = (time.end - time.start) / 1000;
@@ -25,6 +26,8 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
         time: timeElapsed,
         createdAt: timestamp,
       });
+      console.log('Submitting Highscore');
+      setHasAddedHighScore(true);
       // hide Form
       setShowForm(false);
     } catch (error) {
