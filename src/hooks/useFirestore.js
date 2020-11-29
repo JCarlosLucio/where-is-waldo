@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { firestore } from '../firebase/config';
 
 function useFirestore(collection) {
-  const [docs, setDocs] = useState([]);
+  const [docs, setDocs] = useState(null);
 
   useEffect(
     () => {
