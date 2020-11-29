@@ -67,7 +67,10 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
       {showForm ? (
         <form className={styles.form} onSubmit={addScore}>
           <h2>Add Your Score</h2>
-          <h3>Your Time: {formatTime(timeElapsed)}</h3>
+
+          <h4>Time</h4>
+          <h3>{formatTime(timeElapsed)}</h3>
+
           <label htmlFor="name">Name</label>
           <input
             className={styles.name}
