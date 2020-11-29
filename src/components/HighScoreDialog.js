@@ -17,7 +17,7 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
   // check if isHighScore to showForm for adding to firestore
   useEffect(
     () => {
-      if (scores.length > 0 && !hasAddedHighScore) {
+      if (scores !== null && !hasAddedHighScore) {
         const maxScore = Math.max(...scores.map((score) => score.time));
         const isHighScore = scores.length < 10 ? true : timeElapsed < maxScore;
         if (isHighScore) {
@@ -50,11 +50,13 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
   };
 
   // use scores from firestore
-  const scoresList = scores.map((score) => (
-    <li key={score.id}>
-      {score.name.toUpperCase()} {formatTime(score.time)}
-    </li>
-  ));
+  const scoresList =
+    scores !== null &&
+    scores.map((score) => (
+      <li key={score.id}>
+        {score.name.toUpperCase()} {formatTime(score.time)}
+      </li>
+    ));
 
   return (
     <div className={styles.root}>
