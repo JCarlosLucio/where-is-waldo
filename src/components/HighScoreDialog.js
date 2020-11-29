@@ -62,7 +62,11 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
     <div className={styles.root}>
       <div className={styles.highscores}>
         <h1>High Scores</h1>
-        <ol className={styles.scores}>{scoresList}</ol>
+        {scores !== null && scores.length < 1 ? (
+          <span>No highscores yet!</span>
+        ) : (
+          <ol className={styles.scores}>{scoresList}</ol>
+        )}
       </div>
       {showForm ? (
         <form className={styles.form} onSubmit={addScore}>
