@@ -136,11 +136,11 @@ https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-f
 
 ## Lessons Learned
 
-- Routing a React application using `<BrowserRouter />`.
-- Using [CSS Modules](https://github.com/css-modules/css-modules) to keep styles
-  scoped to a Component.
-- Deployment to [GitHub Pages](https://pages.github.com/)
-- Fix routing after deploying to GitHub Pages with `<HashRouter />`.
+- Connecting [Firebase](https://firebase.google.com) to a React client.
+- Using [Firebase](https://firebase.google.com) as a backend.
+- Using [CSS Modules](https://github.com/css-modules/css-modules) with
+  [SASS](https://sass-lang.com/).
+- Deploying to [Netlify](https://www.netlify.com/).
 
 ## Author
 
