@@ -39,7 +39,7 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
         time: timeElapsed,
         createdAt: timestamp,
       });
-      console.log('Submitting Highscore');
+
       setHasAddedHighScore(true);
       // hide Form
       setShowForm(false);

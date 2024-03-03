@@ -26,7 +26,6 @@ function useFirestore(collectionPath) {
         };
       });
 
-      console.log(`Getting ${collectionPath}`);
       setDocs(documents);
     });
 

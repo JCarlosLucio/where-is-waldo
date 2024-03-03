@@ -55,8 +55,6 @@ function GameImage({
 
       // Get relative Coords from Firestore
       const coordsRef = doc(firestore, 'coords', itemId);
-
-      console.log('Getting character coords');
       const coordsSnap = await getDoc(coordsRef);
 
       if (!coordsSnap.exists()) {
