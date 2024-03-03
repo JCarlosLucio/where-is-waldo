@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { doc, getDoc } from 'firebase/firestore';
 import { firestore } from '../firebase/config';
@@ -23,6 +23,15 @@ function GameImage({
     { text: '', bg: 'red' },
     3000
   );
+
+  // checks for win condition every time list changes
+  useEffect(() => {
+    const win = list.every((item) => item.found);
+
+    if (win) {
+      handleWin();
+    }
+  }, [list, handleWin]);
 
   const imgRef = useRef();
 
@@ -87,7 +96,6 @@ function GameImage({
           xPos={menuCoords.x}
           yPos={menuCoords.y}
           handleMenuClick={handleMenuClick}
-          handleWin={handleWin}
         />
       )}
       <img className={styles.image} src={imageUrl} alt={imageName} />

@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ContextMenu.module.scss';
 
-function ContextMenu({ list, xPos, yPos, handleMenuClick, handleWin }) {
+function ContextMenu({ list, xPos, yPos, handleMenuClick }) {
   const notFound = list
     .filter((item) => !item.found)
     .map((item) => (
@@ -17,13 +16,6 @@ function ContextMenu({ list, xPos, yPos, handleMenuClick, handleWin }) {
         {item.name}
       </li>
     ));
-
-  useEffect(() => {
-    const win = list.every((item) => item.found);
-    if (win) {
-      handleWin();
-    }
-  }, [list, handleWin]);
 
   return (
     <div
