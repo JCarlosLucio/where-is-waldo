@@ -90,6 +90,7 @@ Deploys are triggered on `push` or `pull_request` merge to `master` branch.
 - Migrating from [Netlify](https://www.netlify.com/) to
   [Cloudflare Pages](https://pages.cloudflare.com/).
 - Deploying to [Cloudflare Pages](https://pages.cloudflare.com/).
+- Setting up a PWA with [PWA Vite Plugin](https://vite-pwa-org.netlify.app/).
 
 ## Author
 
