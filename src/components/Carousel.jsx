@@ -1,5 +1,5 @@
-import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
+import PropTypes from 'prop-types';
 import StartDialog from './StartDialog';
 import Logo from './Logo';
 import 'react-alice-carousel/lib/alice-carousel.css';
@@ -13,7 +13,7 @@ const responsive = {
 
 function Carousel({ imageList, handleStart }) {
   const images = imageList.map((image) => (
-    <div className={styles['image-card']}>
+    <div key={image.id} className={styles['image-card']}>
       <StartDialog
         list={image.itemList}
         imageName={image.imageName}
@@ -38,5 +38,10 @@ function Carousel({ imageList, handleStart }) {
     </div>
   );
 }
+
+Carousel.propTypes = {
+  imageList: PropTypes.array,
+  handleStart: PropTypes.func,
+};
 
 export default Carousel;

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { firestore, timestamp } from '../firebase/config';
 import useFirestore from '../hooks/useFirestore';
 import useInput from '../hooks/useInput';
@@ -15,18 +16,15 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
   const timeElapsed = (time.end - time.start) / 1000;
 
   // check if isHighScore to showForm for adding to firestore
-  useEffect(
-    () => {
-      if (scores !== null && !hasAddedHighScore) {
-        const maxScore = Math.max(...scores.map((score) => score.time));
-        const isHighScore = scores.length < 10 ? true : timeElapsed < maxScore;
-        if (isHighScore) {
-          setShowForm(true);
-        }
+  useEffect(() => {
+    if (scores !== null && !hasAddedHighScore) {
+      const maxScore = Math.max(...scores.map((score) => score.time));
+      const isHighScore = scores.length < 10 ? true : timeElapsed < maxScore;
+      if (isHighScore) {
+        setShowForm(true);
       }
-    },
-    [scores, timeElapsed, hasAddedHighScore, setShowForm]
-  );
+    }
+  }, [scores, timeElapsed, hasAddedHighScore, setShowForm]);
 
   const addScore = async (e) => {
     try {
@@ -100,5 +98,11 @@ function HighScoreDialog({ imageId, time, handleRestart }) {
     </div>
   );
 }
+
+HighScoreDialog.propTypes = {
+  imageId: PropTypes.string,
+  time: PropTypes.object,
+  handleRestart: PropTypes.func,
+};
 
 export default HighScoreDialog;

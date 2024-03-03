@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import useToggle from './hooks/useToggle';
 import Navbar from './components/Navbar';
 import GameImage from './components/GameImage';
@@ -37,7 +37,7 @@ function App() {
     }
   };
 
-  const handleRestart = (e) => {
+  const handleRestart = (_e) => {
     // reset Timer component
     setIsGameOver(true);
     // reset image found states

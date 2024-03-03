@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { firestore } from '../firebase/config';
 import useToggle from '../hooks/useToggle';
 import useSnackbar from '../hooks/useSnackbar';
@@ -104,5 +105,14 @@ function GameImage({
     </div>
   );
 }
+
+GameImage.propTypes = {
+  list: PropTypes.array,
+  imageUrl: PropTypes.string,
+  imageName: PropTypes.string,
+  imageAuthor: PropTypes.string,
+  toggleFound: PropTypes.func,
+  handleWin: PropTypes.func,
+};
 
 export default GameImage;

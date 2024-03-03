@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import useToggle from '../hooks/useToggle';
 import DropdownMenu from './DropdownMenu';
 import Logo from './Logo';
@@ -29,5 +29,11 @@ function Navbar({ list, isGameOver, handleRestart }) {
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  list: PropTypes.array,
+  isGameOver: PropTypes.bool,
+  handleRestart: PropTypes.func,
+};
 
 export default Navbar;

@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import FindList from './FindList';
 import Button from './Button';
 import styles from './StartDialog.module.scss';
@@ -27,5 +27,13 @@ function StartDialog({ list, imageName, imageAuthor, imageUrl, handleStart }) {
     </div>
   );
 }
+
+StartDialog.propTypes = {
+  list: PropTypes.array,
+  imageName: PropTypes.string,
+  imageAuthor: PropTypes.string,
+  imageUrl: PropTypes.string,
+  handleStart: PropTypes.func,
+};
 
 export default StartDialog;

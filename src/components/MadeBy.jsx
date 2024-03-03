@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './MadeBy.module.scss';
 
 function MadeBy({ position, text, author, link }) {
@@ -20,5 +20,12 @@ function MadeBy({ position, text, author, link }) {
     </div>
   );
 }
+
+MadeBy.propTypes = {
+  position: PropTypes.string,
+  text: PropTypes.string,
+  author: PropTypes.string,
+  link: PropTypes.string,
+};
 
 export default MadeBy;

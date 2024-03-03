@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Logo.module.scss';
 
 function Logo({ big, primary, secondary }) {
@@ -9,5 +9,11 @@ function Logo({ big, primary, secondary }) {
     </h1>
   );
 }
+
+Logo.propTypes = {
+  big: PropTypes.bool,
+  primary: PropTypes.string,
+  secondary: PropTypes.string,
+};
 
 export default Logo;

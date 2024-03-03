@@ -1,29 +1,29 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import styles from './ContextMenu.module.scss';
 
 function ContextMenu({ list, xPos, yPos, handleMenuClick, handleWin }) {
-  const notFound = list.filter((item) => !item.found).map((item) => (
-    <li
-      key={item.id}
-      className={styles.item}
-      onClick={(e) => {
-        e.stopPropagation();
-        handleMenuClick(item.name, item.id, xPos, yPos);
-      }}
-    >
-      {item.name}
-    </li>
-  ));
+  const notFound = list
+    .filter((item) => !item.found)
+    .map((item) => (
+      <li
+        key={item.id}
+        className={styles.item}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleMenuClick(item.name, item.id, xPos, yPos);
+        }}
+      >
+        {item.name}
+      </li>
+    ));
 
-  useEffect(
-    () => {
-      const win = list.every((item) => item.found);
-      if (win) {
-        handleWin();
-      }
-    },
-    [list, handleWin]
-  );
+  useEffect(() => {
+    const win = list.every((item) => item.found);
+    if (win) {
+      handleWin();
+    }
+  }, [list, handleWin]);
 
   return (
     <div
@@ -34,5 +34,13 @@ function ContextMenu({ list, xPos, yPos, handleMenuClick, handleWin }) {
     </div>
   );
 }
+
+ContextMenu.propTypes = {
+  list: PropTypes.array,
+  xPos: PropTypes.number,
+  yPos: PropTypes.number,
+  handleMenuClick: PropTypes.func,
+  handleWin: PropTypes.func,
+};
 
 export default ContextMenu;
