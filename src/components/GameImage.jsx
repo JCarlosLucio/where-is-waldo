@@ -1,4 +1,6 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { doc, getDoc } from 'firebase/firestore';
 import { firestore } from '../firebase/config';
 import useToggle from '../hooks/useToggle';
 import useSnackbar from '../hooks/useSnackbar';
@@ -22,6 +24,15 @@ function GameImage({
     3000
   );
 
+  // checks for win condition every time list changes
+  useEffect(() => {
+    const win = list.every((item) => item.found);
+
+    if (win) {
+      handleWin();
+    }
+  }, [list, handleWin]);
+
   const imgRef = useRef();
 
   const handleImageClick = (event) => {
@@ -43,15 +54,14 @@ function GameImage({
       const relY = (y - 60) / height; // 60 is height of navbar
 
       // Get relative Coords from Firestore
-      const coordsRef = firestore.collection('coords').doc(itemId);
-      const coords = await coordsRef.get().then((doc) => {
-        if (doc) {
-          console.log('Getting character coords');
-          return doc.data();
-        } else {
-          console.log('No such character coords!');
-        }
-      });
+      const coordsRef = doc(firestore, 'coords', itemId);
+      const coordsSnap = await getDoc(coordsRef);
+
+      if (!coordsSnap.exists()) {
+        throw Error('No such character coords!');
+      }
+
+      const coords = coordsSnap.data();
 
       // Test max relative distance from origin(X0,Y0) deltaX=0.042 / deltaY=0.01
       const testX = Math.abs(relX - coords.relX0) < 0.042;
@@ -84,7 +94,6 @@ function GameImage({
           xPos={menuCoords.x}
           yPos={menuCoords.y}
           handleMenuClick={handleMenuClick}
-          handleWin={handleWin}
         />
       )}
       <img className={styles.image} src={imageUrl} alt={imageName} />
@@ -104,5 +113,14 @@ function GameImage({
     </div>
   );
 }
+
+GameImage.propTypes = {
+  list: PropTypes.array,
+  imageUrl: PropTypes.string,
+  imageName: PropTypes.string,
+  imageAuthor: PropTypes.string,
+  toggleFound: PropTypes.func,
+  handleWin: PropTypes.func,
+};
 
 export default GameImage;

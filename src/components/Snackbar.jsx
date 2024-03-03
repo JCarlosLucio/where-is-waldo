@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Snackbar.module.scss';
 
 function Snackbar({ children, bg }) {
@@ -8,5 +8,10 @@ function Snackbar({ children, bg }) {
     </div>
   );
 }
+
+Snackbar.propTypes = {
+  children: PropTypes.node,
+  bg: PropTypes.string,
+};
 
 export default Snackbar;

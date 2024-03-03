@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import FindList from './FindList';
 import styles from './DropdownMenu.module.scss';
 
@@ -20,5 +20,9 @@ function DropdownMenu({ list }) {
     </div>
   );
 }
+
+DropdownMenu.propTypes = {
+  list: PropTypes.array,
+};
 
 export default DropdownMenu;

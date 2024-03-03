@@ -1,37 +1,47 @@
 {
   "name": "where-is-waldo",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Juan Carlos Lucio",
+  "description": "A Where is Waldo type App.",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.5",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "firebase": "^8.0.0",
-    "node-sass": "^4.14.1",
-    "react": "^17.0.1",
-    "react-alice-carousel": "^2.0.2",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.0"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JCarlosLucio/where-is-waldo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JCarlosLucio/where-is-waldo/issues"
+  },
+  "homepage": "https://github.com/JCarlosLucio/where-is-waldo#readme",
+  "engines": {
+    "node": ">= 16"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite --open",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "firebase": "^10.8.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-alice-carousel": "^2.8.0",
+    "react-dom": "^18.2.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^18.2.60",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "sass": "^1.71.1",
+    "vite": "^5.1.4",
+    "vite-plugin-pwa": "^0.19.2"
   }
 }

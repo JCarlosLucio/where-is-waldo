@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './FindItem.module.scss';
 
 function FindItem({ name, franchise, image, found }) {
@@ -12,5 +12,12 @@ function FindItem({ name, franchise, image, found }) {
     </div>
   );
 }
+
+FindItem.propTypes = {
+  name: PropTypes.string,
+  franchise: PropTypes.string,
+  image: PropTypes.string,
+  found: PropTypes.bool,
+};
 
 export default FindItem;

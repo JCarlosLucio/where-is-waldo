@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import useToggle from './hooks/useToggle';
 import Navbar from './components/Navbar';
 import GameImage from './components/GameImage';
@@ -29,7 +29,6 @@ function App() {
 
   const handleWin = () => {
     if (!modalOpen) {
-      console.log('YOU WIN');
       setIsGameOver(true);
       setTime({ ...time, end: Date.now() });
       setStageModal('highscore');
@@ -37,7 +36,7 @@ function App() {
     }
   };
 
-  const handleRestart = (e) => {
+  const handleRestart = (_e) => {
     // reset Timer component
     setIsGameOver(true);
     // reset image found states
@@ -45,8 +44,9 @@ function App() {
     // resets time to 0
     setTime({ start: 0, end: 0 });
     setStageModal('start');
-    if (!modalOpen) toggleModalOpen();
-    console.log('RESTARTED');
+    if (!modalOpen) {
+      toggleModalOpen();
+    }
   };
 
   const toggleFound = (itemId) => {
