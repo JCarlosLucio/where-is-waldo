@@ -32,7 +32,6 @@ ContextMenu.propTypes = {
   xPos: PropTypes.number,
   yPos: PropTypes.number,
   handleMenuClick: PropTypes.func,
-  handleWin: PropTypes.func,
 };
 
 export default ContextMenu;
